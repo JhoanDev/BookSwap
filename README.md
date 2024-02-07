@@ -115,7 +115,7 @@ Este Documento de Requisitos delineia os requisitos funcionais e de qualidade pa
 
 - Jhoan Fernandes de Oliveira
 - Claudio Caueh Oliveira Xavier
-- Dayverson Eryc de Moura Silva
+- Dayvison Eryc de Moura Silva
 
 ## Licença
 
