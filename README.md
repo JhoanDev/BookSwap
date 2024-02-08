@@ -106,6 +106,10 @@ O Documento de Requisitos descreve os requisitos funcionais e de qualidade para 
 
 Este Documento de Requisitos delineia os requisitos funcionais e de qualidade para o desenvolvimento do BookSwap Universitário. Esses requisitos devem ser considerados durante todo o processo de desenvolvimento para garantir que a plataforma atenda às necessidades dos usuários e ofereça uma experiência satisfatória.
 
+## Diagrama de classes
+
+![DiagramaDeClasses](https://github.com/JhoanDev/BookSwap/blob/main/BookSwap.png)
+
 ## Desenvolvedores
 
 - Jhoan Fernandes de Oliveira
