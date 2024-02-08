@@ -22,8 +22,9 @@
      - [Testes e Garantia de Qualidade](#testes-e-garantia-de-qualidade)
      - [Suporte ao Cliente](#suporte-ao-cliente)
    - [Considerações Finais](#considerações-finais)
-3. [Desenvolvedores](#desenvolvedores)
-4. [Licença](#licença)
+3. [Diagrama de Classes](#diagrama-de-classes)
+4. [Desenvolvedores](#desenvolvedores)
+5. [Licença](#licença)
 
 ## Definição do Projeto  
 
