@@ -26,6 +26,7 @@
       - [Suporte ao Cliente](#suporte-ao-cliente)
     - [Considerações Finais](#considerações-finais)
   - [Diagrama de classes](#diagrama-de-classes)
+  - [Atividades de teste a serem empregadas](#atividades-de-teste-a-serem-empregadas)
   - [Desenvolvedores](#desenvolvedores)
   - [Licença](#licença)
 
@@ -119,6 +120,8 @@ Este Documento de Requisitos delineia os requisitos funcionais e de qualidade pa
 ## Diagrama de classes
 
 ![DiagramaDeClasses](https://github.com/JhoanDev/BookSwap/blob/main/BookSwap.png)
+
+## Atividades de teste a serem empregadas
 
 ## Desenvolvedores
 
