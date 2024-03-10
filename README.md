@@ -1,30 +1,34 @@
 # Sumário
 
-1. [Definição do Projeto](#definição-do-projeto)
-   - [Descrição](#descrição)
-   - [Perfil do Usuário](#perfil-do-usuário)
-2. [Documento de Requisitos](#documento-de-requisitos)
-   - [Introdução](#introdução)
-   - [Requisitos Funcionais](#requisitos-funcionais)
-     - [Cadastro de Usuário](#cadastro-de-usuário)
-     - [Perfil do Usuário](#perfil-do-usuário-1)
-     - [Edição/Exclusão do Perfil do Usuário](#ediçãoexclusão-do-perfil-do-usuário)
-     - [Listagem de Livros](#listagem-de-livros)
-     - [Busca e Filtros](#busca-e-filtros)
-     - [Solicitação de Troca](#solicitação-de-troca)
-     - [Avaliações e Comentários](#avaliações-e-comentários)
-     - [Notificações e Alertas](#notificações-e-alertas)
-     - [Gerenciamento de Biblioteca Pessoal](#gerenciamento-de-biblioteca-pessoal)
-   - [Requisitos de Qualidade](#requisitos-de-qualidade)
-     - [Usabilidade](#usabilidade)
-     - [Acessibilidade](#acessibilidade)
-     - [Comunicabilidade](#comunicabilidade)
-     - [Testes e Garantia de Qualidade](#testes-e-garantia-de-qualidade)
-     - [Suporte ao Cliente](#suporte-ao-cliente)
-   - [Considerações Finais](#considerações-finais)
-3. [Diagrama de Classes](#diagrama-de-classes)
-4. [Desenvolvedores](#desenvolvedores)
-5. [Licença](#licença)
+- [Sumário](#sumário)
+  - [Definição do Projeto](#definição-do-projeto)
+    - [Descrição](#descrição)
+    - [Perfil do Usuário](#perfil-do-usuário)
+  - [Documento de Requisitos](#documento-de-requisitos)
+    - [Introdução](#introdução)
+    - [Requisitos Funcionais](#requisitos-funcionais)
+      - [Cadastro de Usuário](#cadastro-de-usuário)
+      - [Login](#login)
+      - [Perfil do Usuário](#perfil-do-usuário-1)
+      - [Edição/Exclusão do Perfil do Usuário](#ediçãoexclusão-do-perfil-do-usuário)
+      - [Listagem de Livros](#listagem-de-livros)
+      - [Busca e Filtros](#busca-e-filtros)
+      - [Solicitação de Troca](#solicitação-de-troca)
+      - [Avaliações e Comentários](#avaliações-e-comentários)
+      - [Notificações e Alertas](#notificações-e-alertas)
+      - [Gerenciamento de Biblioteca Pessoal](#gerenciamento-de-biblioteca-pessoal)
+    - [Requisitos de Qualidade](#requisitos-de-qualidade)
+    - [Requisitos de Qualidade](#requisitos-de-qualidade-1)
+      - [Usabilidade](#usabilidade)
+      - [Acessibilidade](#acessibilidade)
+      - [Comunicabilidade](#comunicabilidade)
+      - [Testes e Garantia de Qualidade](#testes-e-garantia-de-qualidade)
+      - [Suporte ao Cliente](#suporte-ao-cliente)
+    - [Considerações Finais](#considerações-finais)
+  - [Diagrama de classes](#diagrama-de-classes)
+  - [Atividades de teste a serem empregadas](#atividades-de-teste-a-serem-empregadas)
+  - [Desenvolvedores](#desenvolvedores)
+  - [Licença](#licença)
 
 ## Definição do Projeto  
 
@@ -34,7 +38,7 @@ O **BookSwap Universitário** é um aplicativo digital desenvolvido em `java` pe
 
 ### Perfil do Usuário
 
-O público-alvo da BookSwap Universitário é composto por estudantes universitários entre 18 e 35 anos, independentemente do gênero, localização geográfica ou área de estudo. Esses usuários possuem um nível moderado a avançado de proficiência tecnológica, estão familiarizados com aplicativos móveis e plataformas online, e são ativos em redes sociais. Eles enfrentam desafios financeiros durante sua jornada acadêmica e buscam soluções econômicas para otimizar seus recursos.
+O público-alvo da BookSwap Universitário é composto por estudantes universitários entre 18 e 35 anos, independentemente do gênero, localização geográfica ou área de estudo. Esses usuários possuem um nível moderado a avançado de proficiência tecnológica, estão familiarizados com aplicativos móveis e plataformas _on-line_, e são ativos em redes sociais. Eles enfrentam desafios financeiros durante sua jornada acadêmica e buscam soluções econômicas para otimizar seus recursos.
 
 ## Documento de Requisitos 
 
@@ -47,6 +51,10 @@ O Documento de Requisitos descreve os requisitos funcionais e de qualidade para 
 #### Cadastro de Usuário
 
 - Os usuários devem poder se cadastrar na plataforma fornecendo informações básicas como nome, e-mail, instituição de ensino, localização, senha.
+  
+#### Login
+
+- Os usuários devem poder fazer login na plataforma fornecendo seu e-mail e senha previamente cadastrados para acessar suas contas e funcionalidades personalizadas.
 
 #### Perfil do Usuário
 
@@ -82,26 +90,28 @@ O Documento de Requisitos descreve os requisitos funcionais e de qualidade para 
 
 ### Requisitos de Qualidade
 
+### Requisitos de Qualidade
+
 #### Usabilidade
 
-- A interface deve ser intuitiva e fácil de usar, garantindo uma experiência amigável para usuários de diferentes níveis de habilidade tecnológica.
+- Interface para todos os usuários.
 
 #### Acessibilidade
 
-- A plataforma deve ser acessível a usuários com diferentes necessidades, seguindo padrões de acessibilidade e permitindo o uso por pessoas com deficiências.
+- Plataforma adequada para usuários com diferentes necessidades.
 
 #### Comunicabilidade
 
-- Sistema eficiente de comunicação entre usuários, incluindo mensagens diretas, notificações claras e informações concisas sobre trocas e eventos.
-
+- Sistema de comunicação entre usuários, incluindo mensagens diretas e notificações.
 
 #### Testes e Garantia de Qualidade
 
-- Realização de testes rigorosos para identificar e corrigir bugs, garantindo a estabilidade e confiabilidade da plataforma.
+- Realização de testes para identificar e corrigir bugs, garantindo estabilidade e confiabilidade.
 
 #### Suporte ao Cliente
 
-- Oferecimento de suporte ao cliente eficaz, incluindo recursos de ajuda online, chat ao vivo e resposta rápida a consultas.
+- Oferecimento de suporte ao cliente, incluindo recursos de ajuda online e resposta rápida a consultas.
+
 
 ### Considerações Finais
 
@@ -110,6 +120,8 @@ Este Documento de Requisitos delineia os requisitos funcionais e de qualidade pa
 ## Diagrama de classes
 
 ![DiagramaDeClasses](https://github.com/JhoanDev/BookSwap/blob/main/BookSwap.png)
+
+## Atividades de teste a serem empregadas
 
 ## Desenvolvedores
 
