@@ -18,6 +18,7 @@
       - [Notificações e Alertas](#notificações-e-alertas)
       - [Gerenciamento de Biblioteca Pessoal](#gerenciamento-de-biblioteca-pessoal)
     - [Requisitos de Qualidade](#requisitos-de-qualidade)
+    - [Requisitos de Qualidade](#requisitos-de-qualidade-1)
       - [Usabilidade](#usabilidade)
       - [Acessibilidade](#acessibilidade)
       - [Comunicabilidade](#comunicabilidade)
@@ -88,26 +89,28 @@ O Documento de Requisitos descreve os requisitos funcionais e de qualidade para 
 
 ### Requisitos de Qualidade
 
+### Requisitos de Qualidade
+
 #### Usabilidade
 
-- A interface deve ser intuitiva e fácil de usar, garantindo uma experiência amigável para usuários de diferentes níveis de habilidade tecnológica.
+- Interface para todos os usuários.
 
 #### Acessibilidade
 
-- A plataforma deve ser acessível a usuários com diferentes necessidades, seguindo padrões de acessibilidade e permitindo o uso por pessoas com deficiências.
+- Plataforma adequada para usuários com diferentes necessidades.
 
 #### Comunicabilidade
 
-- Sistema eficiente de comunicação entre usuários, incluindo mensagens diretas, notificações claras e informações concisas sobre trocas e eventos.
-
+- Sistema de comunicação entre usuários, incluindo mensagens diretas e notificações.
 
 #### Testes e Garantia de Qualidade
 
-- Realização de testes rigorosos para identificar e corrigir bugs, garantindo a estabilidade e confiabilidade da plataforma.
+- Realização de testes para identificar e corrigir bugs, garantindo estabilidade e confiabilidade.
 
 #### Suporte ao Cliente
 
-- Oferecimento de suporte ao cliente eficaz, incluindo recursos de ajuda online, chat ao vivo e resposta rápida a consultas.
+- Oferecimento de suporte ao cliente, incluindo recursos de ajuda online e resposta rápida a consultas.
+
 
 ### Considerações Finais
 
