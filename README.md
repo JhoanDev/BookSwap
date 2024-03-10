@@ -36,7 +36,7 @@ O **BookSwap Universitário** é um aplicativo digital desenvolvido em `java` pe
 
 ### Perfil do Usuário
 
-O público-alvo da BookSwap Universitário é composto por estudantes universitários entre 18 e 35 anos, independentemente do gênero, localização geográfica ou área de estudo. Esses usuários possuem um nível moderado a avançado de proficiência tecnológica, estão familiarizados com aplicativos móveis e plataformas online, e são ativos em redes sociais. Eles enfrentam desafios financeiros durante sua jornada acadêmica e buscam soluções econômicas para otimizar seus recursos.
+O público-alvo da BookSwap Universitário é composto por estudantes universitários entre 18 e 35 anos, independentemente do gênero, localização geográfica ou área de estudo. Esses usuários possuem um nível moderado a avançado de proficiência tecnológica, estão familiarizados com aplicativos móveis e plataformas _on-line_, e são ativos em redes sociais. Eles enfrentam desafios financeiros durante sua jornada acadêmica e buscam soluções econômicas para otimizar seus recursos.
 
 ## Documento de Requisitos 
 
