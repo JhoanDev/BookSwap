@@ -1,30 +1,32 @@
 # Sumário
 
-1. [Definição do Projeto](#definição-do-projeto)
-   - [Descrição](#descrição)
-   - [Perfil do Usuário](#perfil-do-usuário)
-2. [Documento de Requisitos](#documento-de-requisitos)
-   - [Introdução](#introdução)
-   - [Requisitos Funcionais](#requisitos-funcionais)
-     - [Cadastro de Usuário](#cadastro-de-usuário)
-     - [Perfil do Usuário](#perfil-do-usuário-1)
-     - [Edição/Exclusão do Perfil do Usuário](#ediçãoexclusão-do-perfil-do-usuário)
-     - [Listagem de Livros](#listagem-de-livros)
-     - [Busca e Filtros](#busca-e-filtros)
-     - [Solicitação de Troca](#solicitação-de-troca)
-     - [Avaliações e Comentários](#avaliações-e-comentários)
-     - [Notificações e Alertas](#notificações-e-alertas)
-     - [Gerenciamento de Biblioteca Pessoal](#gerenciamento-de-biblioteca-pessoal)
-   - [Requisitos de Qualidade](#requisitos-de-qualidade)
-     - [Usabilidade](#usabilidade)
-     - [Acessibilidade](#acessibilidade)
-     - [Comunicabilidade](#comunicabilidade)
-     - [Testes e Garantia de Qualidade](#testes-e-garantia-de-qualidade)
-     - [Suporte ao Cliente](#suporte-ao-cliente)
-   - [Considerações Finais](#considerações-finais)
-3. [Diagrama de Classes](#diagrama-de-classes)
-4. [Desenvolvedores](#desenvolvedores)
-5. [Licença](#licença)
+- [Sumário](#sumário)
+  - [Definição do Projeto](#definição-do-projeto)
+    - [Descrição](#descrição)
+    - [Perfil do Usuário](#perfil-do-usuário)
+  - [Documento de Requisitos](#documento-de-requisitos)
+    - [Introdução](#introdução)
+    - [Requisitos Funcionais](#requisitos-funcionais)
+      - [Cadastro de Usuário](#cadastro-de-usuário)
+      - [Login](#login)
+      - [Perfil do Usuário](#perfil-do-usuário-1)
+      - [Edição/Exclusão do Perfil do Usuário](#ediçãoexclusão-do-perfil-do-usuário)
+      - [Listagem de Livros](#listagem-de-livros)
+      - [Busca e Filtros](#busca-e-filtros)
+      - [Solicitação de Troca](#solicitação-de-troca)
+      - [Avaliações e Comentários](#avaliações-e-comentários)
+      - [Notificações e Alertas](#notificações-e-alertas)
+      - [Gerenciamento de Biblioteca Pessoal](#gerenciamento-de-biblioteca-pessoal)
+    - [Requisitos de Qualidade](#requisitos-de-qualidade)
+      - [Usabilidade](#usabilidade)
+      - [Acessibilidade](#acessibilidade)
+      - [Comunicabilidade](#comunicabilidade)
+      - [Testes e Garantia de Qualidade](#testes-e-garantia-de-qualidade)
+      - [Suporte ao Cliente](#suporte-ao-cliente)
+    - [Considerações Finais](#considerações-finais)
+  - [Diagrama de classes](#diagrama-de-classes)
+  - [Desenvolvedores](#desenvolvedores)
+  - [Licença](#licença)
 
 ## Definição do Projeto  
 
@@ -47,6 +49,10 @@ O Documento de Requisitos descreve os requisitos funcionais e de qualidade para 
 #### Cadastro de Usuário
 
 - Os usuários devem poder se cadastrar na plataforma fornecendo informações básicas como nome, e-mail, instituição de ensino, localização, senha.
+  
+#### Login
+
+- Os usuários devem poder fazer login na plataforma fornecendo seu e-mail e senha previamente cadastrados para acessar suas contas e funcionalidades personalizadas.
 
 #### Perfil do Usuário
 
