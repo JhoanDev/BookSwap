@@ -18,7 +18,6 @@
       - [Notificações e Alertas](#notificações-e-alertas)
       - [Gerenciamento de Biblioteca Pessoal](#gerenciamento-de-biblioteca-pessoal)
     - [Requisitos de Qualidade](#requisitos-de-qualidade)
-    - [Requisitos de Qualidade](#requisitos-de-qualidade-1)
       - [Usabilidade](#usabilidade)
       - [Acessibilidade](#acessibilidade)
       - [Comunicabilidade](#comunicabilidade)
@@ -87,8 +86,6 @@ O Documento de Requisitos descreve os requisitos funcionais e de qualidade para 
 #### Gerenciamento de Biblioteca Pessoal
 
 - Funcionalidade que permite aos usuários organizar e manter registros de sua biblioteca pessoal, incluindo livros emprestados e trocados.
-
-### Requisitos de Qualidade
 
 ### Requisitos de Qualidade
 
