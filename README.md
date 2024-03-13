@@ -141,10 +141,6 @@ Este Documento de Requisitos delineia os requisitos funcionais e de qualidade pa
 **Error Guessing:**
 - Utilizar experiência, intuição e conhecimento geral para antecipar e testar cenários de erro que podem ocorrer durante a execução do sistema.
 
-
-
-
-
 ## Desenvolvedores
 
 - Jhoan Fernandes de Oliveira
