@@ -120,6 +120,31 @@ Este Documento de Requisitos delineia os requisitos funcionais e de qualidade pa
 
 ## Atividades de teste a serem empregadas
 
+**Teste de Unidade:**
+- Verificar individualmente cada componente do sistema para garantir que eles funcionem conforme o esperado.
+
+**Teste de Integração:**
+- Testar a integração entre os diferentes módulos do sistema para garantir que funcionem harmoniosamente junto.
+
+**Teste de Aceitação:**
+- Iremos usar o sistema como usuários reais para testar o sistema e fornecer feedback sobre a usabilidade, a fim de garantir que atenda às suas necessidades e expectativa.
+
+**Teste de Sistema:**
+- Testar o sistema como um todo para verificar se todas as partes integradas funcionam corretamente e atendem aos requisitos do sistema.
+
+**Análise do Valor Limite:**
+- Identificar e testar os valores limites dentro das faixas permitidas para entrada de dados, a fim de verificar se o sistema se comporta corretamente próximo aos limites de suas especificações.
+
+**Tabela de Decisão:**
+- Desenvolver uma tabela de decisão que identifique todas as possíveis combinações de condições de entrada e seus resultados esperados, a fim de garantir que todas as condições sejam testadas adequadamente.
+
+**Error Guessing:**
+- Utilizar experiência, intuição e conhecimento geral para antecipar e testar cenários de erro que podem ocorrer durante a execução do sistema.
+
+
+
+
+
 ## Desenvolvedores
 
 - Jhoan Fernandes de Oliveira
