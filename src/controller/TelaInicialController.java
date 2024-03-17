@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Scanner;
 
+import view.Cadastro;
 import view.Login;
 
 public class TelaInicialController {
@@ -10,7 +11,7 @@ public class TelaInicialController {
             Login.login(scanner);
         }
         else{
-            System.out.println("Cadastrando...");
+            Cadastro.cadastro(scanner);
         }
     }
 }

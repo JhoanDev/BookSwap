@@ -23,8 +23,5 @@ public class Login {
                 System.out.println("Tente novamente.");
             }
         }
-
-        // Fecha o scanner quando não for mais necessário
-        scanner.close();
     }
 }
