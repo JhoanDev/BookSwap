@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+import model.Usuario;
 import view.TelaInicial;
 
 public class Main {
