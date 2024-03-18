@@ -1,10 +1,7 @@
 package view;
 
 import java.util.Scanner;
-
 import model.CadastroModel;
-import model.Usuario;
-import model.UsuariosRepo;
 
 public class Cadastro {
 
@@ -13,7 +10,7 @@ public class Cadastro {
         while (!cadastrado) {
             try {
                 System.out.println("Cadastro de Usuário:");
-                
+
                 System.out.print("Nome: ");
                 String nome = scanner.nextLine();
 
@@ -28,7 +25,7 @@ public class Cadastro {
 
                 System.out.print("Instituição: ");
                 String instituicao = scanner.nextLine();
-    
+
                 cadastrado = true;
                 CadastroModel.finalizaCadastro(nome, login, email, senha, instituicao);
                 System.out.println("Usuário cadastrado com sucesso!");

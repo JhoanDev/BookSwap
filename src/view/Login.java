@@ -1,6 +1,8 @@
 package view;
 
 import java.util.Scanner;
+import model.Usuario;
+import model.UsuariosRepo;
 
 public class Login {
 
@@ -12,9 +14,15 @@ public class Login {
                 String login = scanner.nextLine();
                 System.out.print("Insira sua senha: ");
                 String senha = scanner.nextLine();
-                if (login.equals("admin") && senha.equals("admin")) {
+                if (model.LoginModel.verificaLogin(login, senha)) {
                     System.out.println("Login bem-sucedido!");
                     loggedIn = true;
+                    UsuariosRepo userlist = UsuariosRepo.getInstance();
+                    Usuario user = userlist.getUsuario(login, senha);
+                    int sair = Menu.menu(scanner, user);
+                    if (sair == 1) {
+                        break;
+                    }
                 } else {
                     throw new Exception("Login ou senha incorretos.");
                 }
