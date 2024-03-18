@@ -6,6 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         int sair;
+        System.out.println("Bem vindo ao BookSwap\n");
         do {
             sair = TelaInicial.telaInicial(scanner);
         } while (sair != 1);

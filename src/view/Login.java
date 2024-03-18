@@ -15,7 +15,7 @@ public class Login {
                 System.out.print("Insira sua senha: ");
                 String senha = scanner.nextLine();
                 if (model.LoginModel.verificaLogin(login, senha)) {
-                    System.out.println("Login bem-sucedido!");
+                    System.out.println("Login bem-sucedido!\n");
                     loggedIn = true;
                     UsuariosRepo userlist = UsuariosRepo.getInstance();
                     Usuario user = userlist.getUsuario(login, senha);
@@ -28,7 +28,7 @@ public class Login {
                 }
             } catch (Exception e) {
                 System.out.println("Erro: " + e.getMessage());
-                System.out.println("Tente novamente.");
+                System.out.println("Tente novamente.\n");
             }
         }
     }

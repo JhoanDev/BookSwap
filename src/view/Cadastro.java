@@ -28,10 +28,10 @@ public class Cadastro {
 
                 cadastrado = true;
                 CadastroModel.finalizaCadastro(nome, login, email, senha, instituicao);
-                System.out.println("Usuário cadastrado com sucesso!");
+                System.out.println("Usuário cadastrado com sucesso!\n");
             } catch (Exception e) {
                 System.out.println("Erro ao cadastrar usuário: " + e.getMessage());
-                System.out.println("Tente novamente.");
+                System.out.println("Tente novamente.\n");
             }
         }
     }
