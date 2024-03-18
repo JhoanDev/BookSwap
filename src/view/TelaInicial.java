@@ -6,18 +6,22 @@ import controller.TelaInicialController;
 
 public class TelaInicial {
 
-    public static void telaInicial(Scanner scanner) {
+    public static int telaInicial(Scanner scanner) {
         while (true) {
             System.out.println("Bem vindo ao BookSwap");
             System.out.println("[1] - Logar");
             System.out.println("[2] - Cadastrar");
+            System.out.println("[3] - Sair");
             System.out.print("Digite sua opcao: ");
             
             int opcao = 0;
             try {
                 opcao = Integer.parseInt(scanner.nextLine());
-                if (opcao == 1 || opcao == 2) {
+                if (opcao == 1 || opcao == 2 || opcao == 3) {
                     TelaInicialController.telaInicialCont(opcao, scanner);
+                    if (opcao == 3) {
+                        return 1;
+                    }
                     break;
                 } else {
                     System.out.println("Opção inválida. Por favor, digite 1 ou 2.");
@@ -26,5 +30,6 @@ public class TelaInicial {
                 System.out.println("Opção inválida. Por favor, digite um número.");
             }
         }
+        return 0;
     }
 }

@@ -7,11 +7,16 @@ import view.Login;
 
 public class TelaInicialController {
     public static void telaInicialCont(int op, Scanner scanner){
-        if (op == 1) {
-            Login.login(scanner);
-        }
-        else{
-            Cadastro.cadastro(scanner);
+        switch (op) {
+            case 1:
+                Login.login(scanner);
+                break;
+            case 2:
+                Cadastro.cadastro(scanner);
+                break;
+            default:
+                System.out.println("Saindo...");
+                break;   
         }
     }
 }

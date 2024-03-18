@@ -2,6 +2,10 @@ package view;
 
 import java.util.Scanner;
 
+import model.CadastroModel;
+import model.Usuario;
+import model.UsuariosRepo;
+
 public class Cadastro {
 
     public static void cadastro(Scanner scanner) {
@@ -24,9 +28,10 @@ public class Cadastro {
 
                 System.out.print("Instituição: ");
                 String instituicao = scanner.nextLine();
-                
-                System.out.println("Usuário cadastrado com sucesso!");
+    
                 cadastrado = true;
+                CadastroModel.finalizaCadastro(nome, login, email, senha, instituicao);
+                System.out.println("Usuário cadastrado com sucesso!");
             } catch (Exception e) {
                 System.out.println("Erro ao cadastrar usuário: " + e.getMessage());
                 System.out.println("Tente novamente.");
