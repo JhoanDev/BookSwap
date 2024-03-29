@@ -1,7 +1,6 @@
-package view;
+package controller;
 
 import java.util.Scanner;
-import controller.TelaInicialController;
 
 public class TelaInicial {
 
@@ -11,19 +10,18 @@ public class TelaInicial {
             System.out.println("[2] - Cadastrar");
             System.out.println("[3] - Sair");
             System.out.print("Digite sua opcao: ");
-
             int opcao = 0;
             try {
                 opcao = Integer.parseInt(scanner.nextLine());
                 if (opcao == 1 || opcao == 2 || opcao == 3) {
                     System.out.println();
-                    TelaInicialController.telaInicialCont(opcao, scanner);
+                    telaInicialCont(opcao, scanner);
                     if (opcao == 3) {
                         return 1;
                     }
                     break;
                 } else {
-                    System.out.println("Opção inválida. Por favor, digite 1 ou 2.\n");
+                    System.out.println("Opção inválida. Por favor, digite uma opção valida\n");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Opção inválida. Por favor, digite um número.\n");
@@ -31,5 +29,20 @@ public class TelaInicial {
             }
         }
         return 0;
+    }
+
+    public static void telaInicialCont(int op, Scanner scanner){
+        switch (op) {
+            case 1:
+                Login.login(scanner);
+                break;
+            case 2:
+                Cadastro.cadastro(scanner);
+                break;
+            default:
+                System.out.println("Saindo...");
+
+                break;   
+        }
     }
 }

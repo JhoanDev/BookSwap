@@ -1,4 +1,4 @@
-package view;
+package controller;
 
 import java.util.Scanner;
 import model.Usuario;
@@ -6,7 +6,7 @@ import model.UsuariosRepo;
 
 public class Login {
 
-    public static void login(Scanner scanner) {
+    public static int login(Scanner scanner) {
         boolean loggedIn = false;
         while (!loggedIn) {
             try {
@@ -17,12 +17,9 @@ public class Login {
                 if (model.LoginModel.verificaLogin(login, senha)) {
                     System.out.println("Login bem-sucedido!\n");
                     loggedIn = true;
-                    UsuariosRepo userlist = UsuariosRepo.getInstance();
-                    Usuario user = userlist.getUsuario(login, senha);
+                    Usuario user =  UsuariosRepo.getInstance().getUsuario(login, senha);
                     int sair = Menu.menu(scanner, user);
-                    if (sair == 1) {
-                        break;
-                    }
+                    if (sair == 1) return 1;
                 } else {
                     throw new Exception("Login ou senha incorretos.");
                 }
@@ -31,5 +28,6 @@ public class Login {
                 System.out.println("Tente novamente.\n");
             }
         }
+        return 0;
     }
 }

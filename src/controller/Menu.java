@@ -1,4 +1,4 @@
-package view;
+package controller;
 
 import java.util.Scanner;
 import model.Usuario;
@@ -21,18 +21,23 @@ public class Menu {
             switch (opcao) {
                 case 1:
                     System.out.println("Livros disponíveis");
+                    menu(scanner, user);
                     break;
                 case 2:
                     System.out.println("Perfil");
+                    menu(scanner, user);
                     break;
                 case 3:
                     System.out.println("Notificações");
+                    menu(scanner, user);
                     break;
                 case 4:
                     System.out.println("Minha biblioteca");
+                    menu(scanner, user);
                     break;
                 case 5:
                     System.out.println("Trocas");
+                    menu(scanner, user);
                     break;
                 case 6:
                     return 1;
