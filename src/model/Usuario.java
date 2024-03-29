@@ -5,16 +5,18 @@ public class Usuario {
     private String login;
     private String email;
     private String senha;
-    private String universidade;
+    private Instituicao universidade;
     private int id;
+    private double avaliacao;
 
-    public Usuario(String nome, String login, String email, String senha, String universidade, int id) {
+    public Usuario(String nome, String login, String email, String senha, Instituicao universidade, int id) {
         this.nome = nome;
         this.login = login;
         this.email = email;
         this.senha = senha;
         this.universidade = universidade;
         this.id = id;
+        this.avaliacao = 0;
     }
 
     public String getNome() {
@@ -41,20 +43,20 @@ public class Usuario {
         this.email = email;
     }
 
+    public double getAvaliacao() {
+        return avaliacao;
+    }
+
+    public void setAvaliacao(double avaliacao) {
+        this.avaliacao = avaliacao;
+    }
+
     public String getSenha() {
         return senha;
     }
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public String getUniversidade() {
-        return universidade;
-    }
-
-    public void setUniversidade(String universidade) {
-        this.universidade = universidade;
     }
 
     public int getId() {
@@ -65,5 +67,12 @@ public class Usuario {
         this.id = id;
     }
 
+    public Instituicao getUniversidade() {
+        return universidade;
+    }
+
+    public void setUniversidade(Instituicao universidade) {
+        this.universidade = universidade;
+    }
 
 }

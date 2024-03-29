@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-// Classe onde fica o array list de usuarios, 
+//Classe onde fica o array list de usuarios, 
 //para acessar é so criar uma instancia onde precisar e chamar os metodos.
 public class UsuariosRepo {
     private static UsuariosRepo instance;
