@@ -1,5 +1,6 @@
 import java.util.Scanner;
-import view.TelaInicial;
+
+import controller.TelaInicial;
 
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
