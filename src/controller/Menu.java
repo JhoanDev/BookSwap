@@ -25,6 +25,7 @@ public class Menu {
                     break;
                 case 2:
                     System.out.println("Perfil");
+                    
                     menu(scanner, user);
                     break;
                 case 3:
