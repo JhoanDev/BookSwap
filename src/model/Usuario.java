@@ -77,11 +77,11 @@ public class Usuario {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Dados do Usuário:\n");
+        sb.append("\nDados do Usuário\n");
         sb.append("  Nome: ").append(nome).append("\n");
         sb.append("  Login: ").append(login).append("\n");
         sb.append("  Email: ").append(email).append("\n");
-        sb.append("  Universidade: ").append(universidade).append("\n");
+        sb.append("  Universidade: ").append(universidade.getNome()).append("\n");
         sb.append("  ID: ").append(id).append("\n");
         sb.append("  Avaliação: ").append(avaliacao).append("\n");
         return sb.toString();
