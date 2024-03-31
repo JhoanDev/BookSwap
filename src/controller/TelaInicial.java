@@ -6,7 +6,7 @@ public class TelaInicial {
 
     public static int telaInicial(Scanner scanner) {
         while (true) {
-            System.out.println("[1] - Logar");
+            System.out.println("\n[1] - Logar");
             System.out.println("[2] - Cadastrar");
             System.out.println("[3] - Sair");
             System.out.print("Digite sua opcao: ");

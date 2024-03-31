@@ -5,7 +5,7 @@ import model.Usuario;
 
 public class Menu {
     public static int menu(Scanner scanner, Usuario user) {
-        System.out.println("[1] - Ver livros disponíveis");
+        System.out.println("\n[1] - Ver livros disponíveis");
         System.out.println("[2] - Perfil");
         System.out.println("[3] - Notificações");
         System.out.println("[4] - Minha biblioteca");
@@ -32,7 +32,7 @@ public class Menu {
                     menu(scanner, user);
                     break;
                 case 4:
-                    System.out.println("Minha biblioteca");
+                    BibliotecaPessoal.livroMenu(scanner, user);
                     menu(scanner, user);
                     break;
                 case 5:

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Usuario {
     private String nome;
     private String login;
@@ -8,6 +10,7 @@ public class Usuario {
     private Instituicao universidade;
     private int id;
     private double avaliacao;
+    private Biblioteca bibliotecaPessoal;
 
     public Usuario(String nome, String login, String email, String senha, Instituicao universidade, int id) {
         this.nome = nome;
@@ -17,6 +20,7 @@ public class Usuario {
         this.universidade = universidade;
         this.id = id;
         this.avaliacao = 0;
+        this.bibliotecaPessoal = new Biblioteca();
     }
 
     public String getNome() {
@@ -74,6 +78,19 @@ public class Usuario {
     public void setUniversidade(Instituicao universidade) {
         this.universidade = universidade;
     }
+
+    public void adicionaLivro(Livro livro) {
+        this.bibliotecaPessoal.adicionarLivro(livro);
+    }
+
+    public void removeLivro(String nome ) {
+        this.bibliotecaPessoal.removerLivro(nome);
+    }
+
+    public ArrayList<Livro> getLivros() {
+        return this.bibliotecaPessoal.getLivros();
+    }
+    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

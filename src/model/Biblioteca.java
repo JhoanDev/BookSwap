@@ -4,11 +4,9 @@ import java.util.ArrayList;
 
 public class Biblioteca {
     private ArrayList<Livro> livros;
-    private Usuario usuario;
     private int quantidadeLivros;
 
-    public Biblioteca(Usuario usuario) {
-        this.usuario = usuario;
+    public Biblioteca() {
         this.livros = new ArrayList<>();
         this.quantidadeLivros = 0;
     }
@@ -18,9 +16,20 @@ public class Biblioteca {
         this.quantidadeLivros++;
     }
 
-    public void removerLivro(Livro livro) {
-        this.livros.remove(livro);
-        this.quantidadeLivros--;
+    public void removerLivro(String livro) {
+        if (this.quantidadeLivros == 0) {
+            System.out.println("Não há livros na biblioteca.");
+            return;
+        }
+        int i;
+        for (i = 0; i < this.livros.size(); i++) {
+            if (this.livros.get(i).getTitulo().equals(livro)) {
+                this.livros.remove(i);
+                this.quantidadeLivros--;
+                return;
+            }
+        }
+        if(i == this.livros.size()) System.out.println("Livro não encontrado.");
     }
 
     public ArrayList<Livro> getLivros() {
@@ -29,14 +38,6 @@ public class Biblioteca {
 
     public void setLivros(ArrayList<Livro> livros) {
         this.livros = livros;
-    }
-    
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
     }
 
     public int getQuantidadeLivros() {

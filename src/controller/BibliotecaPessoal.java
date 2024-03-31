@@ -2,11 +2,12 @@ package controller;
 
 import java.util.Scanner;
 
+import model.Livro;
 import model.Usuario;
 
 public class BibliotecaPessoal {
     public static void livroMenu(Scanner scanner, Usuario user) {
-        System.out.println("[1] - Adicionar livro");
+        System.out.println("\n[1] - Adicionar livro");
         System.out.println("[2] - Remover livro");
         System.out.println("[3] - Listar livros");
         System.out.println("[4] - Sair");
@@ -16,20 +17,34 @@ public class BibliotecaPessoal {
             opcao = Integer.parseInt(scanner.nextLine());
             switch (opcao) {
                 case 1:
-                    System.out.println("Adicionar livro");
-                    // Implemente a lógica para adicionar um livro à bibliotca do usuário
-                    
+                    System.out.print("insira o nome do livro:");
+                    String nome = scanner.nextLine();
+                    System.out.print("insira o autor do livro:");
+                    String autor = scanner.nextLine();
+                    System.out.print("insira o ano do livro:");
+                    int ano = Integer.parseInt(scanner.nextLine());
+                    System.out.print("insira o editora do livro:");
+                    String editora = scanner.nextLine();
+                    System.out.print("insira o edicao do livro:");
+                    int edicao = Integer.parseInt(scanner.nextLine());
+                    user.adicionaLivro(new Livro(nome, autor, editora, ano, edicao));
+                    livroMenu(scanner, user);
                     break;
                 case 2:
-                    System.out.println("Remover livro");
-                    // Implemente a lógica para remover um livro da biblioteca do usuário
+                    System.out.println("Insira o nome do livro que deseja remover:");
+                    String nomeLivro = scanner.nextLine();
+                    user.removeLivro(nomeLivro);
+                    livroMenu(scanner, user);
                     break;
                 case 3:
-                    System.out.println("Listar livros");
-                    // Implemente a lógica para listar os livros na biblioteca do usuário
+                    System.out.println("Livros do usuario:");
+                    for (Livro livro : user.getLivros()) {
+                        System.out.println(livro);
+                    }
+                    livroMenu(scanner, user);
                     break;
                 case 4:
-                    System.out.println("Sair do menu de manipulação de livros");
+                    System.out.println("Saindo...");
                     break;
                 default:
                     throw new IllegalArgumentException("Opção inválida. Por favor, escolha uma opção de 1 a 4.");
