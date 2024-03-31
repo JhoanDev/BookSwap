@@ -11,6 +11,7 @@ public class Usuario {
     private int id;
     private double avaliacao;
     private Biblioteca bibliotecaPessoal;
+    private ArrayList<Notificacao> notificacoes;
 
     public Usuario(String nome, String login, String email, String senha, Instituicao universidade, int id) {
         this.nome = nome;
@@ -21,6 +22,7 @@ public class Usuario {
         this.id = id;
         this.avaliacao = 0;
         this.bibliotecaPessoal = new Biblioteca();
+        this.notificacoes = new ArrayList<>();
     }
 
     public String getNome() {
@@ -91,6 +93,26 @@ public class Usuario {
         return this.bibliotecaPessoal.getLivros();
     }
     
+    public void addNotificacao(Notificacao notificacao) {
+        this.notificacoes.add(notificacao);
+    }
+
+    public ArrayList<Notificacao> getNotificacoes() {
+        return notificacoes;
+    }
+
+    public void setNotificacoes(ArrayList<Notificacao> notificacoes) {
+        this.notificacoes = notificacoes;
+    }
+
+    public void removeNotificacao(Notificacao notificacao) {
+        this.notificacoes.remove(notificacao);
+    }
+
+    public void removeNotificacao(int index) {
+        this.notificacoes.remove(index);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
