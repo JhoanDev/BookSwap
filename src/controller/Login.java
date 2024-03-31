@@ -15,7 +15,7 @@ public class Login {
                 System.out.print("Insira sua senha: ");
                 String senha = scanner.nextLine();
                 if (model.LoginModel.verificaLogin(login, senha)) {
-                    System.out.println("Login bem-sucedido!\n");
+                    System.out.println("\nLogin bem-sucedido!");
                     loggedIn = true;
                     Usuario user =  UsuariosRepo.getInstance().getUsuario(login, senha);
                     int sair = Menu.menu(scanner, user);

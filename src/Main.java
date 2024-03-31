@@ -15,8 +15,8 @@ public class Main {
         CadastroModel.cadastraInstituicao("UERN", "Mossoró", "RN");
         CadastroModel.cadastraUsuario("Jhoan", "jhoan.log","jhoan@gmail.com", "123",
         InstituicoesRepo.getInstance().getInstituicao("UFERSA"));
-        
-        System.out.println("Bem vindo ao BookSwap\n");
+
+        System.out.println("\n\nBem vindo ao BookSwap");
         do {
             sair = TelaInicial.telaInicial(scanner);
         } while (sair != 1);

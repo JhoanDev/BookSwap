@@ -20,7 +20,7 @@ public class Perfil {
                     perfilMenu(scanner, user);
                     break;
                 case 2:
-                    System.out.println("Qual dado deseja editar?");
+                    System.out.println("\nQual dado deseja editar?");
                     System.out.println("[1] - Nome");
                     System.out.println("[2] - Email");
                     System.out.println("[3] - Senha");
@@ -61,7 +61,7 @@ public class Perfil {
                     }
                     break;
                 case 3:
-                    System.out.println("Sair do menu de perfil");
+                    System.out.println("\nSaindo...");
                     break;
                 default:
                     throw new IllegalArgumentException("Opção inválida. Por favor, escolha uma opção de 1 a 3.");

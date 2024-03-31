@@ -100,7 +100,7 @@ public class Usuario {
         sb.append("  Email: ").append(email).append("\n");
         sb.append("  Universidade: ").append(universidade.getNome()).append("\n");
         sb.append("  ID: ").append(id).append("\n");
-        sb.append("  Avaliação: ").append(avaliacao).append("\n");
+        sb.append("  Avaliação: ").append(avaliacao);
         return sb.toString();
     }
     

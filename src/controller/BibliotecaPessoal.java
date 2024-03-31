@@ -17,34 +17,38 @@ public class BibliotecaPessoal {
             opcao = Integer.parseInt(scanner.nextLine());
             switch (opcao) {
                 case 1:
-                    System.out.print("insira o nome do livro:");
+                    System.out.print("\ninsira o nome do livro: ");
                     String nome = scanner.nextLine();
-                    System.out.print("insira o autor do livro:");
+                    System.out.print("insira o autor do livro: ");
                     String autor = scanner.nextLine();
-                    System.out.print("insira o ano do livro:");
+                    System.out.print("insira o ano do livro: ");
                     int ano = Integer.parseInt(scanner.nextLine());
-                    System.out.print("insira o editora do livro:");
+                    System.out.print("insira o editora do livro: ");
                     String editora = scanner.nextLine();
-                    System.out.print("insira o edicao do livro:");
+                    System.out.print("insira o edicao do livro: ");
                     int edicao = Integer.parseInt(scanner.nextLine());
                     user.adicionaLivro(new Livro(nome, autor, editora, ano, edicao));
                     livroMenu(scanner, user);
                     break;
                 case 2:
-                    System.out.println("Insira o nome do livro que deseja remover:");
+                    System.out.print("\nInsira o nome do livro que deseja remover:");
                     String nomeLivro = scanner.nextLine();
                     user.removeLivro(nomeLivro);
                     livroMenu(scanner, user);
                     break;
                 case 3:
-                    System.out.println("Livros do usuario:");
+                    if (user.getLivros().isEmpty()) {
+                        System.out.println("\nNenhum livro cadastrado.");
+                        livroMenu(scanner, user);
+                    }
+                    System.out.println("\nLivros do usuario:\n");
                     for (Livro livro : user.getLivros()) {
                         System.out.println(livro);
                     }
                     livroMenu(scanner, user);
                     break;
                 case 4:
-                    System.out.println("Saindo...");
+                    System.out.println("\nSaindo...");
                     break;
                 default:
                     throw new IllegalArgumentException("Opção inválida. Por favor, escolha uma opção de 1 a 4.");

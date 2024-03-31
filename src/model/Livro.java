@@ -57,6 +57,6 @@ public class Livro {
     
     @Override
     public String toString() {
-        return "Livro{" + "titulo=" + titulo + ", autor=" + autor + ", editora=" + editora + ", ano=" + ano + ", edicao=" + edicao + '}';
+        return String.format("Livro{titulo=%s, autor=%s, editora=%s, ano=%d, edicao=%d}", titulo, autor, editora, ano, edicao);
     }
 }
