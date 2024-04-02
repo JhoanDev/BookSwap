@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Scanner;
 
+import model.BibliotecaRepo;
 import model.Livro;
 import model.Usuario;
 
@@ -28,6 +29,7 @@ public class BibliotecaPessoal {
                     System.out.print("insira o edicao do livro: ");
                     int edicao = Integer.parseInt(scanner.nextLine());
                     user.adicionaLivro(new Livro(nome, autor, editora, ano, edicao));
+                    BibliotecaRepo.getInstance().getBiblioteca().adicionarLivro(new Livro(nome, autor, editora, ano, edicao));
                     livroMenu(scanner, user);
                     break;
                 case 2:
@@ -49,7 +51,7 @@ public class BibliotecaPessoal {
                     break;
                 case 4:
                     System.out.println("\nSaindo...");
-                    break;
+                    return;
                 default:
                     throw new IllegalArgumentException("Opção inválida. Por favor, escolha uma opção de 1 a 4.");
             }

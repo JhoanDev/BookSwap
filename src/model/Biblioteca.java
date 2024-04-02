@@ -36,6 +36,15 @@ public class Biblioteca {
         return livros;
     }
 
+    public Livro getLivro(String titulo) {
+        for (Livro livro : this.livros) {
+            if (livro.getTitulo().equals(titulo)) {
+                return livro;
+            }
+        }
+        return null;
+    }
+
     public void setLivros(ArrayList<Livro> livros) {
         this.livros = livros;
     }

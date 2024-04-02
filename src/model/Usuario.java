@@ -113,6 +113,10 @@ public class Usuario {
         this.notificacoes.remove(index);
     }
 
+    public Biblioteca getBibliotecaPessoal() {
+        return bibliotecaPessoal;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -125,5 +129,7 @@ public class Usuario {
         sb.append("  Avaliação: ").append(avaliacao);
         return sb.toString();
     }
+
+
     
 }

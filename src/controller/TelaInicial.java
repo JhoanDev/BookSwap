@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class TelaInicial {
 
-    public static int telaInicial(Scanner scanner) {
+    public static void telaInicial(Scanner scanner) {
         while (true) {
             System.out.println("\n[1] - Logar");
             System.out.println("[2] - Cadastrar");
@@ -17,7 +17,7 @@ public class TelaInicial {
                     System.out.println();
                     telaInicialCont(opcao, scanner);
                     if (opcao == 3) {
-                        return 1;
+                        return;
                     }
                     break;
                 } else {
@@ -25,10 +25,10 @@ public class TelaInicial {
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Opção inválida. Por favor, digite um número.\n");
-                return telaInicial(scanner); // Chama recursivamente o método para obter uma opção válida
+                telaInicial(scanner); // Chama recursivamente o método para obter uma opção válida
             }
         }
-        return 0;
+        return;
     }
 
     public static void telaInicialCont(int op, Scanner scanner){
@@ -41,8 +41,7 @@ public class TelaInicial {
                 break;
             default:
                 System.out.println("Saindo...");
-
-                break;   
+                return;
         }
     }
 }

@@ -36,6 +36,7 @@ public class Cadastro {
                     cadastrado = true;
                     CadastroModel.cadastraUsuario(nome, login, email, senha, instituicao);
                     System.out.println("Usuário cadastrado com sucesso!\n");
+                    return;
                 } else {
                     System.out.println("Instituição inválida. Por favor, insira um nome de instituição válido.\n");
                     tentativas++;
@@ -48,6 +49,7 @@ public class Cadastro {
         }
         if (!cadastrado) {
             System.out.println("Limite de tentativas excedido. Cadastro cancelado.\n");
+            return;
         }
     }
 }

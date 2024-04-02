@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Livro {
     private String titulo;
     private String autor;
@@ -55,6 +57,18 @@ public class Livro {
         this.edicao = edicao;
     }
     
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Livro livro = (Livro) obj;
+        return Objects.equals(this.titulo, livro.titulo);
+    }
+
     @Override
     public String toString() {
         return String.format("Livro{titulo=%s, autor=%s, editora=%s, ano=%d, edicao=%d}", titulo, autor, editora, ano, edicao);

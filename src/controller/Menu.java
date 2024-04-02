@@ -15,12 +15,15 @@ public class Menu {
         int opcao = 0;
         try {
             opcao = Integer.parseInt(scanner.nextLine());
+            if (opcao == 6) {
+                TelaInicial.telaInicial(scanner);
+            }
             if (opcao < 1 || opcao > 6) {
                 throw new IllegalArgumentException("Opção inválida. Por favor, escolha uma opção de 1 a 6.");
             }
             switch (opcao) {
                 case 1:
-                    System.out.println("Livros disponíveis");
+                    BibliotecaGeral.bibliotecaGeralMenu(scanner, user);
                     menu(scanner, user);
                     break;
                 case 2:

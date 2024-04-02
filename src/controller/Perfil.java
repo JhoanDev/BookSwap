@@ -62,7 +62,7 @@ public class Perfil {
                     break;
                 case 3:
                     System.out.println("\nSaindo...");
-                    break;
+                    return;
                 default:
                     throw new IllegalArgumentException("Opção inválida. Por favor, escolha uma opção de 1 a 3.");
             }
