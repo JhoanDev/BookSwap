@@ -4,7 +4,7 @@ import java.util.Scanner;
 import model.Usuario;
 
 public class Menu {
-    public static int menu(Scanner scanner, Usuario user) {
+    public static void menu(Scanner scanner, Usuario user) {
         System.out.println("\n[1] - Ver livros disponíveis");
         System.out.println("[2] - Perfil");
         System.out.println("[3] - Notificações");
@@ -39,19 +39,19 @@ public class Menu {
                     menu(scanner, user);
                     break;
                 case 5:
-                    System.out.println("Trocas");
+                    TrocaMenu.trocaMenu(scanner, user);
                     menu(scanner, user);
                     break;
                 case 6:
-                    return 1;
+                    return;
             }
         } catch (NumberFormatException e) {
             System.out.println("Erro: Opção inválida. Por favor, digite um número.");
-            return menu(scanner, user); // Chama recursivamente o método para obter uma opção válida
+            menu(scanner, user); // Chama recursivamente o método para obter uma opção válida
         } catch (IllegalArgumentException e) {
             System.out.println("Erro: " + e.getMessage());
-            return menu(scanner, user); // Chama recursivamente o método para obter uma opção válida
+            menu(scanner, user); // Chama recursivamente o método para obter uma opção válida
         }
-        return 0;
+        return;
     }
 }

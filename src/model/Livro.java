@@ -8,13 +8,15 @@ public class Livro {
     private String editora;
     private int ano;
     private int edicao;
+    private Usuario dono;
 
-    public Livro(String titulo, String autor, String editora, int ano, int edicao) {
+    public Livro(String titulo, String autor, String editora, int ano, int edicao, Usuario dono) {
         this.titulo = titulo;
         this.autor = autor;
         this.editora = editora;
         this.ano = ano;
         this.edicao = edicao;
+        this.dono = dono;
     }
 
     public String getTitulo() {
@@ -67,6 +69,14 @@ public class Livro {
         }
         Livro livro = (Livro) obj;
         return Objects.equals(this.titulo, livro.titulo);
+    }
+
+    public Usuario getDono() {
+        return dono;
+    }
+
+    public void setDono(Usuario dono) {
+        this.dono = dono;
     }
 
     @Override

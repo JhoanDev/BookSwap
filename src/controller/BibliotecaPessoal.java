@@ -28,8 +28,8 @@ public class BibliotecaPessoal {
                     String editora = scanner.nextLine();
                     System.out.print("insira o edicao do livro: ");
                     int edicao = Integer.parseInt(scanner.nextLine());
-                    user.adicionaLivro(new Livro(nome, autor, editora, ano, edicao));
-                    BibliotecaRepo.getInstance().getBiblioteca().adicionarLivro(new Livro(nome, autor, editora, ano, edicao));
+                    user.adicionaLivro(new Livro(nome, autor, editora, ano, edicao, user));
+                    BibliotecaRepo.getInstance().getBiblioteca().adicionarLivro(new Livro(nome, autor, editora, ano, edicao, user));
                     livroMenu(scanner, user);
                     break;
                 case 2:

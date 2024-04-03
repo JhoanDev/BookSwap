@@ -12,6 +12,8 @@ public class Usuario {
     private double avaliacao;
     private Biblioteca bibliotecaPessoal;
     private ArrayList<Notificacao> notificacoes;
+    private ArrayList<Troca> trocasEmAndamento;
+    private ArrayList<Troca> trocasFinalizadas;
 
     public Usuario(String nome, String login, String email, String senha, Instituicao universidade, int id) {
         this.nome = nome;
@@ -23,6 +25,8 @@ public class Usuario {
         this.avaliacao = 0;
         this.bibliotecaPessoal = new Biblioteca();
         this.notificacoes = new ArrayList<>();
+        this.trocasEmAndamento = new ArrayList<>();
+        this.trocasFinalizadas = new ArrayList<>();
     }
 
     public String getNome() {
@@ -55,6 +59,10 @@ public class Usuario {
 
     public void setAvaliacao(double avaliacao) {
         this.avaliacao = avaliacao;
+    }
+
+    public void addTrocaEmAndamento(Troca troca) {
+        this.trocasEmAndamento.add(troca);
     }
 
     public String getSenha() {
@@ -130,6 +138,19 @@ public class Usuario {
         return sb.toString();
     }
 
+    public ArrayList<Troca> getTrocasEmAndamento() {
+        return trocasEmAndamento;
+    }
 
-    
+    public ArrayList<Troca> getTrocasFinalizadas() {
+        return trocasFinalizadas;
+    }
+
+    public void addTrocaFinalizada(Troca troca) {
+        this.trocasFinalizadas.add(troca);
+    }
+
+    public void removeTrocaEmAndamento(Troca troca) {
+        this.trocasEmAndamento.remove(troca);
+    }
 }
