@@ -45,6 +45,10 @@ public class Mensagem {
         this.destinatario = destinatario;
     }
 
+    public void enviarMensagem(Usuario destinatario) {
+        destinatario.adicionaMensagem(this);    
+    }
+
     @Override
     public String toString() {
         return String.format("Mensagem{mensagem=%s, lida=%b, remetente=%s}", mensagem, lida, remetente.getNome());

@@ -15,16 +15,16 @@ public class TelaInicial {
                 opcao = Integer.parseInt(scanner.nextLine());
                 if (opcao == 1 || opcao == 2 || opcao == 3) {
                     System.out.println();
-                    telaInicialCont(opcao, scanner);
                     if (opcao == 3) {
                         return;
                     }
+                    telaInicialCont(opcao, scanner);
                     break;
                 } else {
-                    System.out.println("Opção inválida. Por favor, digite uma opção valida\n");
+                    System.out.println("Opção inválida. Por favor, digite uma opção valida");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Opção inválida. Por favor, digite um número.\n");
+                System.out.println("Opção inválida. Por favor, digite um número.");
                 telaInicial(scanner); // Chama recursivamente o método para obter uma opção válida
             }
         }

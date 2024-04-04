@@ -7,7 +7,7 @@ public class Menu {
     public static void menu(Scanner scanner, Usuario user) {
         System.out.println("\n[1] - Ver livros disponíveis");
         System.out.println("[2] - Perfil");
-        System.out.println("[3] - Notificações");
+        System.out.println("[3] - Mensagens");
         System.out.println("[4] - Minha biblioteca");
         System.out.println("[5] - Trocas");
         System.out.println("[6] - Logout");
@@ -16,7 +16,7 @@ public class Menu {
         try {
             opcao = Integer.parseInt(scanner.nextLine());
             if (opcao == 6) {
-                TelaInicial.telaInicial(scanner);
+                return;
             }
             if (opcao < 1 || opcao > 6) {
                 throw new IllegalArgumentException("Opção inválida. Por favor, escolha uma opção de 1 a 6.");
@@ -31,7 +31,7 @@ public class Menu {
                     menu(scanner, user);
                     break;
                 case 3:
-                    System.out.println("Notificações");
+                    Mensagens.mensagemMenu(scanner, user);
                     menu(scanner, user);
                     break;
                 case 4:

@@ -9,11 +9,11 @@ public class Usuario {
     private String senha;
     private Instituicao universidade;
     private int id;
-    private double avaliacao;
     private Biblioteca bibliotecaPessoal;
-    private ArrayList<Notificacao> notificacoes;
     private ArrayList<Troca> trocasEmAndamento;
     private ArrayList<Troca> trocasFinalizadas;
+    private ArrayList<Mensagem> mensagens;
+
 
     public Usuario(String nome, String login, String email, String senha, Instituicao universidade, int id) {
         this.nome = nome;
@@ -22,11 +22,10 @@ public class Usuario {
         this.senha = senha;
         this.universidade = universidade;
         this.id = id;
-        this.avaliacao = 0;
         this.bibliotecaPessoal = new Biblioteca();
-        this.notificacoes = new ArrayList<>();
         this.trocasEmAndamento = new ArrayList<>();
         this.trocasFinalizadas = new ArrayList<>();
+        this.mensagens = new ArrayList<>();
     }
 
     public String getNome() {
@@ -49,16 +48,20 @@ public class Usuario {
         return email;
     }
 
+    public void adicionaMensagem(Mensagem mensagem) {
+        this.mensagens.add(mensagem);
+    }
+
+    public void limparMensagensLidas(){
+        for (Mensagem mensagem : mensagens) {
+            if (mensagem.isLida()) {
+                mensagens.remove(mensagem);
+            }
+        }
+    }
+
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public double getAvaliacao() {
-        return avaliacao;
-    }
-
-    public void setAvaliacao(double avaliacao) {
-        this.avaliacao = avaliacao;
     }
 
     public void addTrocaEmAndamento(Troca troca) {
@@ -101,24 +104,8 @@ public class Usuario {
         return this.bibliotecaPessoal.getLivros();
     }
     
-    public void addNotificacao(Notificacao notificacao) {
-        this.notificacoes.add(notificacao);
-    }
-
-    public ArrayList<Notificacao> getNotificacoes() {
-        return notificacoes;
-    }
-
-    public void setNotificacoes(ArrayList<Notificacao> notificacoes) {
-        this.notificacoes = notificacoes;
-    }
-
-    public void removeNotificacao(Notificacao notificacao) {
-        this.notificacoes.remove(notificacao);
-    }
-
-    public void removeNotificacao(int index) {
-        this.notificacoes.remove(index);
+    public ArrayList<Mensagem> getMensagens() {
+        return mensagens;
     }
 
     public Biblioteca getBibliotecaPessoal() {
@@ -133,8 +120,6 @@ public class Usuario {
         sb.append("  Login: ").append(login).append("\n");
         sb.append("  Email: ").append(email).append("\n");
         sb.append("  Universidade: ").append(universidade.getNome()).append("\n");
-        sb.append("  ID: ").append(id).append("\n");
-        sb.append("  Avaliação: ").append(avaliacao);
         return sb.toString();
     }
 

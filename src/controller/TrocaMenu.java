@@ -2,8 +2,7 @@ package controller;
 
 import java.util.Scanner;
 
-import model.BibliotecaRepo;
-import model.Livro;
+import model.Mensagem;
 import model.Troca;
 import model.Usuario;
 
@@ -25,7 +24,7 @@ public class TrocaMenu {
             switch (opcao) {
                 case 1:
                     trocasAndamento(scanner, user);
-                    trocaMenu(scanner, user);   
+                    trocaMenu(scanner, user);
                     break;
                 case 2:
                     trocasFinalizadas(scanner, user);
@@ -36,7 +35,7 @@ public class TrocaMenu {
             }
         } catch (NumberFormatException e) {
             System.out.println("Erro: Opção inválida. Por favor, digite um número.");
-            trocaMenu(scanner,user); // Chama recursivamente o método para obter uma opção válida
+            trocaMenu(scanner, user); // Chama recursivamente o método para obter uma opção válida
         } catch (IllegalArgumentException e) {
             System.out.println("Erro: " + e.getMessage());
             trocaMenu(scanner, user); // Chama recursivamente o método para obter uma opção válida
@@ -48,12 +47,13 @@ public class TrocaMenu {
         if (user.getTrocasEmAndamento().isEmpty()) {
             System.out.println("Nenhuma troca em andamento.");
             return;
-        };
+        }
+        ;
         for (int i = 0; i < user.getTrocasEmAndamento().size(); i++) {
-            if (user.getTrocasEmAndamento().get(i).getLivro1().getDono().equals(user)){
-                System.out.println("[" + (i + 1) + "] - " + user.getTrocasEmAndamento().get(i) + " ![Falta o outro aprovar]");
-            } 
-            else{
+            if (user.getTrocasEmAndamento().get(i).getLivro1().getDono().equals(user)) {
+                System.out.println(
+                        "[" + (i + 1) + "] - " + user.getTrocasEmAndamento().get(i) + " ![Falta o outro aprovar]");
+            } else {
                 System.out.println("[" + (i + 1) + "] - " + user.getTrocasEmAndamento().get(i));
             }
         }
@@ -66,37 +66,55 @@ public class TrocaMenu {
                 return;
             }
             if (opcao < 1 || opcao > user.getTrocasEmAndamento().size() + 1) {
-                throw new IllegalArgumentException("Opção inválida. Por favor, escolha uma opção de 1 a " + (user.getTrocasEmAndamento().size() + 1) + ".");
+                throw new IllegalArgumentException("Opção inválida. Por favor, escolha uma opção de 1 a "
+                        + (user.getTrocasEmAndamento().size() + 1) + ".");
             }
             Troca trocaEscolhida = user.getTrocasEmAndamento().get(opcao - 1);
-            if (trocaEscolhida.getLivro1().getDono().equals(user)){
+            if (trocaEscolhida.getLivro1().getDono().equals(user)) {
                 System.out.println("\nVocê já aprovou esta troca");
                 return;
             }
             System.out.println("\nTroca escolhida: " + trocaEscolhida);
             System.out.println("\n[1] - Finalizar troca");
             System.out.println("[2] - Rejeitar troca");
-            System.out.println("[3] - Voltar");
+            System.out.println("[3] - Enviar mensagem");
+            System.out.println("[4] - Voltar");
             System.out.print("Escolha uma opção: ");
             int opcao2 = 0;
             try {
                 opcao2 = Integer.parseInt(scanner.nextLine());
-                if (opcao2 == 3) {
+                if (opcao2 == 4) {
                     return;
                 }
-                if (opcao2 < 1 || opcao2 > 3) {
-                    throw new IllegalArgumentException("Opção inválida. Por favor, escolha uma opção de 1 a 3.");
+                if (opcao2 < 1 || opcao2 > 4) {
+                    throw new IllegalArgumentException("Opção inválida. Por favor, escolha uma opção de 1 a 4.");
                 }
-                if (opcao2 == 1) {
-                    trocaEscolhida.aprovar();
-                    trocaEscolhida.finalizar();
-                    System.out.println("Troca finalizada com sucesso.");
-                    return;
-                }
-                if (opcao2 == 2) {
-                    trocaEscolhida.rejeitar();
-                    System.out.println("Troca rejeitada.");
-                    return;
+                switch (opcao2) {
+                    case 1:
+                        trocaEscolhida.aprovar();
+                        trocaEscolhida.finalizar();
+                        System.out.println("Troca finalizada com sucesso.");
+                        return;
+                    case 2:
+                        trocaEscolhida.rejeitar();
+                        System.out.println("Troca rejeitada.");
+                        return;
+                    case 3:
+                        System.out.print("Digite a mensagem: ");
+                        String mensagem = scanner.nextLine();
+
+                        Usuario destinatario;
+                        if (trocaEscolhida.getLivro1().getDono().getNome() == user.getNome()) {
+                            destinatario = trocaEscolhida.getLivro2().getDono();
+                        } else {
+                            destinatario = trocaEscolhida.getLivro1().getDono();
+                        }
+                        Mensagem mensagemObj = new Mensagem(mensagem, user, destinatario);
+                        destinatario.adicionaMensagem(mensagemObj);
+                        System.out.println("Mensagem enviada com sucesso.");
+                        return;
+                    case 4:
+                        return;
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Erro: Opção inválida. Por favor, digite um número.");
@@ -112,7 +130,6 @@ public class TrocaMenu {
             System.out.println("Erro: " + e.getMessage());
             trocasAndamento(scanner, user); // Chama recursivamente o método para obter uma opção válida
         }
-
     }
 
     public static void trocasFinalizadas(Scanner scanner, Usuario user) {

@@ -29,10 +29,10 @@ public class UsuariosRepo {
         return UsuarioList;
     }
 
-    // Retorna usuario pelo id
-    public Usuario getUsuario(int id) {
+    // Retorna usuario pelo nome
+    public Usuario getUsuario(String nome) {
         for (Usuario Usuario : UsuarioList) {
-            if (Usuario.getId() == id) {
+            if (Usuario.getNome() == nome) {
                 return Usuario;
             }
         }
