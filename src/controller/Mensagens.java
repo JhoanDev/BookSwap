@@ -50,6 +50,7 @@ public class Mensagens {
         }
         for (int i = 0; i < user.getMensagens().size(); i++) {
             System.out.println("[" + (i + 1) + "] - " + user.getMensagens().get(i));
+            user.getMensagens().get(i).lida();
         }
         System.out.println("[" + (user.getMensagens().size() + 1) + "] - Voltar");
         System.out.print("Escolha uma opção: ");

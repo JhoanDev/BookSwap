@@ -25,7 +25,6 @@ public class TelaInicial {
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Opção inválida. Por favor, digite um número.");
-                telaInicial(scanner); // Chama recursivamente o método para obter uma opção válida
             }
         }
         return;

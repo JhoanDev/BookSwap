@@ -15,9 +15,6 @@ public class Menu {
         int opcao = 0;
         try {
             opcao = Integer.parseInt(scanner.nextLine());
-            if (opcao == 6) {
-                return;
-            }
             if (opcao < 1 || opcao > 6) {
                 throw new IllegalArgumentException("Opção inválida. Por favor, escolha uma opção de 1 a 6.");
             }
@@ -43,6 +40,7 @@ public class Menu {
                     menu(scanner, user);
                     break;
                 case 6:
+                    TelaInicial.telaInicial(scanner);
                     return;
             }
         } catch (NumberFormatException e) {

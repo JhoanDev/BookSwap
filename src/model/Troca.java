@@ -21,18 +21,9 @@ public class Troca {
         return livro1;
     }
 
-    public void setLivro1(Livro livro1) {
-        this.livro1 = livro1;
-    }
-
     public Livro getLivro2() {
         return livro2;
     }
-
-    public void setLivro2(Livro livro2) {
-        this.livro2 = livro2;
-    }
-
 
     public boolean isFinalizada() {
         return finalizada;

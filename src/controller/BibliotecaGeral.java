@@ -25,7 +25,6 @@ public class BibliotecaGeral {
         System.out.print("Escolha uma opção: ");
         int opcao = obterOpcao(scanner, bGeral.getBiblioteca().getLivros().size() + 1);
         if (opcao == bGeral.getBiblioteca().getLivros().size() + 1) {
-            Menu.menu(scanner, user);
             return;
         }
         if (blibliotecaP.getLivro(bGeral.getBiblioteca().getLivros().get(opcao - 1).getTitulo()) != null) {

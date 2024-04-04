@@ -25,8 +25,8 @@ public class Mensagem {
         return lida;
     }
 
-    public void setLida(boolean lida) {
-        this.lida = lida;
+    public void lida() {
+        this.lida = true;
     }
 
     public Usuario getRemetente() {
@@ -52,9 +52,9 @@ public class Mensagem {
     @Override
     public String toString() {
         String s = "";
-        s += "\tRemetente: " + remetente.getNome();
-        s += "\tDestinatário: " + destinatario.getNome();
-        s += "\tMensagem: " + mensagem;
+        s += "(Remetente: " + remetente.getNome();
+        s += " || Destinatário: " + destinatario.getNome();
+        s += " || Mensagem: " + mensagem;
         return s;
     }
 }
