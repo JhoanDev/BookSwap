@@ -51,6 +51,10 @@ public class Mensagem {
 
     @Override
     public String toString() {
-        return String.format("Mensagem{mensagem=%s, lida=%b, remetente=%s}", mensagem, lida, remetente.getNome());
+        String s = "";
+        s += "\tRemetente: " + remetente.getNome();
+        s += "\tDestinatário: " + destinatario.getNome();
+        s += "\tMensagem: " + mensagem;
+        return s;
     }
 }

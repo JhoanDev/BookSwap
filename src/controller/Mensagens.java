@@ -94,6 +94,7 @@ public class Mensagens {
                         }
                         Mensagem novaMensagem = new Mensagem(mensagem, user, destinatarioUser);
                         destinatarioUser.adicionaMensagem(novaMensagem);
+                        user.adicionaMensagem(novaMensagem);
                         System.out.println("Mensagem enviada.");
                         verMensagens(scanner, user);
                         break;

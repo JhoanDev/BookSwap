@@ -111,6 +111,7 @@ public class TrocaMenu {
                         }
                         Mensagem mensagemObj = new Mensagem(mensagem, user, destinatario);
                         destinatario.adicionaMensagem(mensagemObj);
+                        user.adicionaMensagem(mensagemObj);
                         System.out.println("Mensagem enviada com sucesso.");
                         return;
                     case 4:
