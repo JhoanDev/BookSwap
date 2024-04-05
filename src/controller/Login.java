@@ -11,7 +11,7 @@ public class Login {
         boolean loggedIn = false;
         try {
             while (!loggedIn) {
-                System.out.print("Insira seu login: ");
+                System.out.print("\nInsira seu login: ");
                 String login = scanner.nextLine();
                 System.out.print("Insira sua senha: ");
                 String senha = scanner.nextLine();

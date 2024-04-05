@@ -35,13 +35,9 @@ public class Main {
         bGeral.getBiblioteca().adicionarLivro(new Livro("Book2", "Author2", "Publisher2", 2002, 2, user2));
         bGeral.getBiblioteca().adicionarLivro(new Livro("Book3", "Author3", "Publisher3", 2003, 3, user2));
 
-        System.out.println("a\nBem vindo ao BookSwap");
+        System.out.println("\nBem vindo ao BookSwap");
 
         TelaInicial.telaInicial(scanner);
-        fecharScanner();
-    }
-
-    private static void fecharScanner() {
         scanner.close();
     }
 }

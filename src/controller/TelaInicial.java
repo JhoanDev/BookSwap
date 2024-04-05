@@ -14,10 +14,6 @@ public class TelaInicial {
             try {
                 opcao = Integer.parseInt(scanner.nextLine());
                 if (opcao == 1 || opcao == 2 || opcao == 3) {
-                    System.out.println();
-                    if (opcao == 3) {
-                        return;
-                    }
                     telaInicialCont(opcao, scanner);
                     break;
                 } else {
@@ -39,7 +35,8 @@ public class TelaInicial {
                 Cadastro.cadastro(scanner);
                 break;
             default:
-                System.out.println("Saindo...");
+                scanner.close();
+                System.exit(0);
                 return;
         }
     }

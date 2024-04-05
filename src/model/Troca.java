@@ -11,12 +11,12 @@ public class Troca {
     public Troca(Livro livro1, Livro livro2) {
         this.livro1 = livro1;
         this.livro2 = livro2;
-        this.finalizada = false;
         this.user1Aprovou = false;
         this.user2Aprovou = false;
         this.rejeitada = false;
+        this.finalizada = false;
     }
-    
+
     public Livro getLivro1() {
         return livro1;
     }
@@ -32,15 +32,17 @@ public class Troca {
     public void finalizar() {
         if (ambosAprovaram()) {
             this.finalizada = true;
-            livro1.getDono().getBibliotecaPessoal().removerLivro(livro1.getTitulo());
-            livro2.getDono().getBibliotecaPessoal().removerLivro(livro2.getTitulo());
+            Usuario dono1 = livro1.getDono();
+            Usuario dono2 = livro2.getDono();
+            dono1.getBibliotecaPessoal().removerLivro(livro1.getTitulo());
+            dono2.getBibliotecaPessoal().removerLivro(livro2.getTitulo());
             BibliotecaRepo bGeral = BibliotecaRepo.getInstance();
             bGeral.getBiblioteca().removerLivro(livro1.getTitulo());
             bGeral.getBiblioteca().removerLivro(livro2.getTitulo());
-            livro1.getDono().removeTrocaEmAndamento(this);
-            livro2.getDono().removeTrocaEmAndamento(this);
-            livro1.getDono().addTrocaFinalizada(this);
-            livro2.getDono().addTrocaFinalizada(this);
+            dono1.removeTrocaEmAndamento(this);
+            dono2.removeTrocaEmAndamento(this);
+            dono1.addTrocaFinalizada(this);
+            dono2.addTrocaFinalizada(this);
         }
     }
 
@@ -48,34 +50,30 @@ public class Troca {
         return user1Aprovou && user2Aprovou;
     }
 
-
     public void aprovar() {
         if (!user1Aprovou) {
             this.user1Aprovou = true;
-        }
-        else {
+        } else {
             this.user2Aprovou = true;
         }
     }
 
     public void rejeitar() {
         this.rejeitada = true;
-        livro1.getDono().removeTrocaEmAndamento(this);
-        livro2.getDono().removeTrocaEmAndamento(this);
-        livro1.getDono().addTrocaFinalizada(this);
-        livro2.getDono().addTrocaFinalizada(this);
-    }
-
-    public boolean isTrocaFinalizada() {
-        return rejeitada || finalizada;
-    }
-
-    public boolean isRejeitada() {
-        return rejeitada;
     }
 
     @Override
     public String toString() {
-        return String.format("Troca {livro1=%s, livro2=%s, finalizada=%b}", livro1.getTitulo(), livro2.getTitulo(), finalizada, user1Aprovou, user2Aprovou, rejeitada);
+        if (finalizada && ambosAprovaram()) {
+            return String.format("Troca do livro '%s' pelo livro '%s' (Finalizada e Aprovada)", livro1.getTitulo(),
+                    livro2.getTitulo());
+        } else if (finalizada && !ambosAprovaram() && rejeitada) {
+            return String.format("Troca do livro '%s' pelo livro '%s' (Finalizada e Rejeitada)", livro1.getTitulo(),
+                    livro2.getTitulo());
+        } else {
+            return String.format("Troca do livro '%s' pelo livro '%s' (Pendente)", livro1.getTitulo(),
+                    livro2.getTitulo());
+        }
     }
+
 }

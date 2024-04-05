@@ -10,35 +10,35 @@ import model.Usuario;
 
 public class BibliotecaGeral {
     public static void bibliotecaGeralMenu(Scanner scanner, Usuario user) {
-        BibliotecaRepo bGeral = BibliotecaRepo.getInstance();
+        Biblioteca bGeral = BibliotecaRepo.getInstance().getBiblioteca();
         Biblioteca blibliotecaP = user.getBibliotecaPessoal();
-        if (bGeral.getBiblioteca().getLivros().isEmpty()) {
+        if (bGeral.getQuantidadeLivros() == 0) {
             System.out.println("\nNenhum livro disponível.");
             Menu.menu(scanner, user);
             return;
         }
         System.out.println("\nLivros disponíveis:\n");
-        for (int i = 0; i < bGeral.getBiblioteca().getLivros().size(); i++) {
-            System.out.println("[" + (i + 1) + "] - " + bGeral.getBiblioteca().getLivros().get(i));
+        int qntLivrosBGeral = bGeral.getQuantidadeLivros();
+        for (int i = 0; i < qntLivrosBGeral; i++) {
+            System.out.println("[" + (i + 1) + "] - " + bGeral.getLivros().get(i));
         }
-        System.out.println("[" + (bGeral.getBiblioteca().getLivros().size() + 1) + "] - Voltar");
+        System.out.println("[" + (bGeral.getLivros().size() + 1) + "] - Voltar");
         System.out.print("Escolha uma opção: ");
-        int opcao = obterOpcao(scanner, bGeral.getBiblioteca().getLivros().size() + 1);
-        if (opcao == bGeral.getBiblioteca().getLivros().size() + 1) {
-            return;
-        }
-        if (blibliotecaP.getLivro(bGeral.getBiblioteca().getLivros().get(opcao - 1).getTitulo()) != null) {
+        int opcao = obterOpcao(scanner, qntLivrosBGeral+1);
+        if (opcao == qntLivrosBGeral + 1)  return; //opção de voltar
+        Livro livroEscolhido = bGeral.getLivros().get(opcao - 1);
+        if (blibliotecaP.getLivro(livroEscolhido.getTitulo()) != null) { //se o livro já está na biblioteca pessoal
             System.out.println("Este Livro é seu.");
             bibliotecaGeralMenu(scanner, user);
             return;
         }
-        System.out.println("\nLivro escolhido: " + bGeral.getBiblioteca().getLivros().get(opcao - 1));
+        System.out.println("\nLivro escolhido: " + livroEscolhido);
         System.out.println("\n[1] - Solicitar troca");
         System.out.println("[2] - Voltar");
         System.out.print("Escolha uma opção: ");
         int opcao2 = obterOpcao(scanner, 2);
         if (opcao2 == 1) {
-            realizarTroca(scanner, user, blibliotecaP,bGeral.getBiblioteca().getLivros().get(opcao - 1));
+            realizarTroca(scanner, user, blibliotecaP,livroEscolhido);
         } else {
             bibliotecaGeralMenu(scanner, user);
         }
@@ -63,26 +63,27 @@ public class BibliotecaGeral {
 
     private static void realizarTroca(Scanner scanner, Usuario user, Biblioteca blibliotecaP, Livro livro) {
         System.out.println("\nEscolha um livro seu para troca:");
-        for (int i = 0; i < blibliotecaP.getLivros().size(); i++) {
+        int qntLivrosBPessoal = blibliotecaP.getQuantidadeLivros();
+        for (int i = 0; i < qntLivrosBPessoal; i++) {
             System.out.println("[" + (i + 1) + "] - " + blibliotecaP.getLivros().get(i));
         }
-        System.out.println("[" + (blibliotecaP.getLivros().size() + 1) + "] - Voltar");
+        System.out.println("[" + (qntLivrosBPessoal + 1) + "] - Voltar");
         System.out.print("Escolha uma opção: ");
-        int opcao3 = obterOpcao(scanner, blibliotecaP.getLivros().size() + 1);
-        if (opcao3 == blibliotecaP.getLivros().size() + 1) {
+        int opcao3 = obterOpcao(scanner, qntLivrosBPessoal + 1);
+        if (opcao3 == qntLivrosBPessoal + 1) {
             bibliotecaGeralMenu(scanner, user);
             return;
         }
-        Livro livroEscolhido = blibliotecaP.getLivros().get(opcao3 - 1);
-        System.out.println("\nLivro escolhido: " + livroEscolhido);
+        Livro livroEscolhidoP = blibliotecaP.getLivros().get(opcao3 - 1);
+        System.out.println("\nLivro escolhido: " + livroEscolhidoP);
         System.out.println("\nSolicitação de troca enviada.");
         System.out.println("Aguarde a confirmação do outro usuário.");
-        Usuario eu = blibliotecaP.getLivros().get(opcao3 - 1).getDono();
+        Usuario eu = livroEscolhidoP.getDono();
         Usuario outro = livro.getDono();
-        Troca aux = new Troca(livroEscolhido, livro);
-        eu.addTrocaEmAndamento(aux);
-        outro.addTrocaEmAndamento(aux);
-        aux.aprovar();
+        Troca troca = new Troca(livroEscolhidoP, livro);
+        eu.addTrocaEmAndamento(troca);
+        outro.addTrocaEmAndamento(troca);
+        troca.aprovar();
         Menu.menu(scanner, user);
     }
 }

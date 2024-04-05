@@ -54,7 +54,7 @@ public class Mensagem {
         String s = "";
         s += "(Remetente: " + remetente.getNome();
         s += " || Destinatário: " + destinatario.getNome();
-        s += " || Mensagem: " + mensagem;
+        s += " || Mensagem: " + mensagem + ")";
         return s;
     }
 }
