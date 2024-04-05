@@ -1,7 +1,5 @@
 package model;
 
-import java.util.List;
-
 public class Instituicao {
     private int idInstituicao;
     private String nome;
@@ -31,7 +29,6 @@ public class Instituicao {
     public String getEstado() {
         return estado;
     }
-
 
     public void setIdInstituicao(int idInstituicao) {
         this.idInstituicao = idInstituicao;

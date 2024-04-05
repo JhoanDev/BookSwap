@@ -49,6 +49,15 @@ public class UsuariosRepo {
         return null;
     }
 
+    public boolean existeEsseLogin(String login) {
+        for (Usuario Usuario : UsuarioList) {
+            if (Usuario.getLogin().equals(login)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     // Retorna quantidade de usuarios
     public int getQntUsuarios() {
         return quantidadeUsuarios;

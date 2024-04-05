@@ -13,27 +13,28 @@ public class Main {
     public static void main(String[] args) {
         // Dados pré-cadastrados
         // Cadastro de instituições
-        CadastroModel.cadastraInstituicao("UFERSA", "Pau dos Ferros", "RN");
-        CadastroModel.cadastraInstituicao("UFRN", "Natal", "RN");
-        CadastroModel.cadastraInstituicao("UERN", "Mossoró", "RN");
-        CadastroModel.cadastraInstituicao("IFRN", "Natal", "RN");
-        CadastroModel.cadastraInstituicao("UFPB", "João Pessoa", "PB");
-        CadastroModel.cadastraInstituicao("UFCG", "Campina Grande", "PB");
-        CadastroModel.cadastraInstituicao("UPE", "Recife", "PE");
-        CadastroModel.cadastraInstituicao("UFPE", "Recife", "PE");
-        CadastroModel.cadastraInstituicao("UFRPE", "Recife", "PE");
-        CadastroModel.cadastraInstituicao("UNB", "Brasília", "DF");
-        CadastroModel.cadastraInstituicao("UFG", "Goiânia", "GO");
-        CadastroModel.cadastraInstituicao("UFMG", "Belo Horizonte", "MG");
+        CadastroModel.cadastraInstituicao("UFERSA", "PAU DOS FERROS", "RN");
+        CadastroModel.cadastraInstituicao("UFRN", "NATAL", "RN");
+        CadastroModel.cadastraInstituicao("UERN", "MOSSORÓ", "RN");
+        CadastroModel.cadastraInstituicao("IFRN", "NATAL", "RN");
+        CadastroModel.cadastraInstituicao("UFPB", "JOÃO PESSOA", "PB");
+        CadastroModel.cadastraInstituicao("UFCG", "CAMPINA GRANDE", "PB");
+        CadastroModel.cadastraInstituicao("UPE", "RECIFE", "PE");
+        CadastroModel.cadastraInstituicao("UFPE", "RECIFE", "PE");
+        CadastroModel.cadastraInstituicao("UFRPE", "RECIFE", "PE");
+        CadastroModel.cadastraInstituicao("UNB", "BRASÍLIA", "DF");
+        CadastroModel.cadastraInstituicao("UFG", "GOIÂNIA", "GO");
+        CadastroModel.cadastraInstituicao("UFMG", "BELO HORIZONTE", "MG");
+        
     
         // Cadastro de usuários e livros
         UsuariosRepo ur = UsuariosRepo.getInstance();
         InstituicoesRepo instituicoesRepo = InstituicoesRepo.getInstance();
     
-        CadastroModel.cadastraUsuario("Jhoan", "jhoan.log", "jhoan@gmail.com", "13062004",
-                instituicoesRepo.getInstituicao("UFERSA", "Pau dos Ferros"));
-        CadastroModel.cadastraUsuario("John", "john.log", "john@gmail.com", "20040613",
-                instituicoesRepo.getInstituicao("UFRN", "Natal"));
+        CadastroModel.cadastraUsuario("JHOAN", "jhoan.log", "jhoan@gmail.com", "13062004",
+                instituicoesRepo.getInstituicao("UFERSA", "PAU DOS FERROS"));
+        CadastroModel.cadastraUsuario("JOHN", "john.log", "john@gmail.com", "20040613",
+                instituicoesRepo.getInstituicao("UFRN", "NATAL"));
     
         Usuario jhoan = ur.getUsuario("jhoan.log", "13062004");
         Usuario john = ur.getUsuario("john.log", "20040613");

@@ -38,6 +38,26 @@ public class InstituicoesRepo {
         return null;
     }
 
+    // Verifica se existe alguma instituição com esse nome
+    public Boolean existeEssaInstituicaoN(String nome) {
+        for (Instituicao instituicao : instituicaoList) {
+            if (instituicao.getNome().equals(nome)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Verifica se existe alguma instituição com essa cidade
+    public boolean existeEssaInstituicaoC(String cidade) {
+        for (Instituicao instituicao : instituicaoList) {
+            if (instituicao.getCidade().equals(cidade)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
     // Retorna a quantidade de instituições
     public int getQntInstituicoes() {
         return quantidadeInstituicoes;

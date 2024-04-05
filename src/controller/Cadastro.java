@@ -4,6 +4,7 @@ import java.util.Scanner;
 import model.CadastroModel;
 import model.Instituicao;
 import model.InstituicoesRepo;
+import model.Tratativas;
 
 public class Cadastro {
 
@@ -13,34 +14,22 @@ public class Cadastro {
         
         while (!cadastrado && tentativas < 3) {
             try {
-                System.out.println("Cadastro de Usuário:");
+                System.out.println("\nCadastro de Usuário:\n");
                 
-                System.out.print("Nome: ");
-                String nome = scanner.nextLine();
-                
-                System.out.print("Email: ");
-                String email = scanner.nextLine();
-                
-                System.out.print("Login: ");
-                String login = scanner.nextLine();
-                
-                System.out.print("Senha: ");
-                String senha = scanner.nextLine();
-
-                System.out.print("Nome da instituição: ");
-                String nomeInstituicao = scanner.nextLine();
-
-                System.out.print("Cidade da instituição: ");
-                String cidade = scanner.nextLine();
+                String nome = Tratativas.leEVerificaNome(scanner);
+                String email = Tratativas.leEVerificaEmail(scanner);
+                String login = Tratativas.leEVerificaLogin(scanner);
+                String senha = Tratativas.leEVerificaSenha(scanner);
+                String nomeInstituicao = Tratativas.leEVerificaNomeInstituicao(scanner);
+                String cidade = Tratativas.leEVerificaCidadeInstituicao(scanner);
         
-                
                 Instituicao instituicao = InstituicoesRepo.getInstance().getInstituicao(nomeInstituicao, cidade);
 
                 if (instituicao != null) {
                     cadastrado = true;
                     CadastroModel.cadastraUsuario(nome, login, email, senha, instituicao);
                     System.out.println("Usuário cadastrado com sucesso!\n");
-                    return;
+                    TelaInicial.telaInicial(scanner);
                 } else {
                     System.out.println("Instituição inválida. Por favor, insira um nome de instituição válido.\n");
                     tentativas++;
