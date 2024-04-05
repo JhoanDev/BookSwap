@@ -28,10 +28,10 @@ public class InstituicoesRepo {
         return instituicaoList;
     }
 
-    // Retorna uma instituição pelo Nome
-    public Instituicao getInstituicao(String nome) {
+    // Retorna uma instituição pelo Nome e pela cidade
+    public Instituicao getInstituicao(String nome, String cidade) {
         for (Instituicao instituicao : instituicaoList) {
-            if (instituicao.getNome().toUpperCase().equals(nome.toUpperCase())) {
+            if (instituicao.getNome().equals(nome) && instituicao.getCidade().equals(cidade)) {
                 return instituicao;
             }
         }

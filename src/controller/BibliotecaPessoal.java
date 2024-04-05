@@ -33,9 +33,10 @@ public class BibliotecaPessoal {
                     livroMenu(scanner, user);
                     break;
                 case 2:
-                    System.out.print("\nInsira o nome do livro que deseja remover:");
+                    System.out.print("\nInsira o nome do livro que deseja remover: ");
                     String nomeLivro = scanner.nextLine();
                     user.removeLivro(nomeLivro);
+                    BibliotecaRepo.getInstance().getBiblioteca().removerLivro(nomeLivro);
                     livroMenu(scanner, user);
                     break;
                 case 3:

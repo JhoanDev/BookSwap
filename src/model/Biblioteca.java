@@ -45,10 +45,6 @@ public class Biblioteca {
         return null;
     }
 
-    public void setLivros(ArrayList<Livro> livros) {
-        this.livros = livros;
-    }
-
     public int getQuantidadeLivros() {
         return quantidadeLivros;
     }

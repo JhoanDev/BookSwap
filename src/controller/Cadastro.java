@@ -29,8 +29,12 @@ public class Cadastro {
 
                 System.out.print("Nome da instituição: ");
                 String nomeInstituicao = scanner.nextLine();
+
+                System.out.print("Cidade da instituição: ");
+                String cidade = scanner.nextLine();
+        
                 
-                Instituicao instituicao = InstituicoesRepo.getInstance().getInstituicao(nomeInstituicao);
+                Instituicao instituicao = InstituicoesRepo.getInstance().getInstituicao(nomeInstituicao, cidade);
 
                 if (instituicao != null) {
                     cadastrado = true;

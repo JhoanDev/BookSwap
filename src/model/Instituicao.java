@@ -16,45 +16,40 @@ public class Instituicao {
         this.estado = estado;
     }
 
-    // Getters e Setters
     public int getIdInstituicao() {
         return idInstituicao;
-    }
-
-    public void setIdInstituicao(int idInstituicao) {
-        this.idInstituicao = idInstituicao;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getCidade() {
         return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
     }
 
     public String getEstado() {
         return estado;
     }
 
+
+    public void setIdInstituicao(int idInstituicao) {
+        this.idInstituicao = idInstituicao;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
     public void setEstado(String estado) {
         this.estado = estado;
     }
 
-    public static Instituicao buscarPorNome(List<Instituicao> instituicoes, String nome) {
-        for (Instituicao instituicao : instituicoes) {
-            if (instituicao.getNome().equalsIgnoreCase(nome)) {
-                return instituicao;
-            }
-        }
-        return null;
+    public boolean equals(Instituicao instituicao) {
+        return this.idInstituicao == instituicao.getIdInstituicao();
     }
 }

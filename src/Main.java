@@ -10,34 +10,54 @@ import model.UsuariosRepo;
 
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
-        // dados pre-cadastrados
-        CadastroModel.cadastraInstituicao("UFERSA", "Pau dos ferros", "RN");
+        // Dados pré-cadastrados
+        // Cadastro de instituições
+        CadastroModel.cadastraInstituicao("UFERSA", "Pau dos Ferros", "RN");
         CadastroModel.cadastraInstituicao("UFRN", "Natal", "RN");
         CadastroModel.cadastraInstituicao("UERN", "Mossoró", "RN");
-        CadastroModel.cadastraUsuario("Jhoan", "jhoan.log", "jhoan@gmail.com", "123",
-            InstituicoesRepo.getInstance().getInstituicao("UFERSA"));
-        CadastroModel.cadastraUsuario("John", "john.log", "john@gmail.com", "456",
-            InstituicoesRepo.getInstance().getInstituicao("UFRN"));
+        CadastroModel.cadastraInstituicao("IFRN", "Natal", "RN");
+        CadastroModel.cadastraInstituicao("UFPB", "João Pessoa", "PB");
+        CadastroModel.cadastraInstituicao("UFCG", "Campina Grande", "PB");
+        CadastroModel.cadastraInstituicao("UPE", "Recife", "PE");
+        CadastroModel.cadastraInstituicao("UFPE", "Recife", "PE");
+        CadastroModel.cadastraInstituicao("UFRPE", "Recife", "PE");
+        CadastroModel.cadastraInstituicao("UNB", "Brasília", "DF");
+        CadastroModel.cadastraInstituicao("UFG", "Goiânia", "GO");
+        CadastroModel.cadastraInstituicao("UFMG", "Belo Horizonte", "MG");
+    
+        // Cadastro de usuários e livros
         UsuariosRepo ur = UsuariosRepo.getInstance();
-        Usuario user2 = ur.getUsuario("john.log", "456");
-        user2.adicionaLivro(new Livro("Book4", "Author4", "Publisher4", 2004, 4, user2));
-        user2.adicionaLivro(new Livro("Book5", "Author5", "Publisher5", 2005, 5, user2));
-        Usuario user = ur.getUsuario("jhoan.log", "123");
-        user.adicionaLivro(new Livro("Book1", "Author1", "Publisher1", 2001, 1, user));
-        user.adicionaLivro(new Livro("Book2", "Author2", "Publisher2", 2002, 2, user));
-        user.adicionaLivro(new Livro("Book3", "Author3", "Publisher3", 2003, 3, user));
-        BibliotecaRepo bGeral = BibliotecaRepo.getInstance();
-        bGeral.getBiblioteca().adicionarLivro(new Livro("Book4", "Author4", "Publisher4", 2004, 4, user2));
-        bGeral.getBiblioteca().adicionarLivro(new Livro("Book5", "Author5", "Publisher5", 2005, 5, user2));
-        bGeral.getBiblioteca().adicionarLivro(new Livro("Book1", "Author1", "Publisher1", 2001, 1, user2));
-        bGeral.getBiblioteca().adicionarLivro(new Livro("Book2", "Author2", "Publisher2", 2002, 2, user2));
-        bGeral.getBiblioteca().adicionarLivro(new Livro("Book3", "Author3", "Publisher3", 2003, 3, user2));
+        InstituicoesRepo instituicoesRepo = InstituicoesRepo.getInstance();
+    
+        CadastroModel.cadastraUsuario("Jhoan", "jhoan.log", "jhoan@gmail.com", "13062004",
+                instituicoesRepo.getInstituicao("UFERSA", "Pau dos Ferros"));
+        CadastroModel.cadastraUsuario("John", "john.log", "john@gmail.com", "20040613",
+                instituicoesRepo.getInstituicao("UFRN", "Natal"));
+    
+        Usuario jhoan = ur.getUsuario("jhoan.log", "13062004");
+        Usuario john = ur.getUsuario("john.log", "20040613");
 
-        System.out.println("\nBem vindo ao BookSwap");
-
+        jhoan.adicionaLivro(new Livro("O Senhor dos Anéis", "J.R.R. Tolkien", "HarperCollins", 1954, 1, jhoan));
+        jhoan.adicionaLivro(new Livro("1984", "George Orwell", "Editora Globo", 1949, 2, jhoan));
+        jhoan.adicionaLivro(new Livro("Dom Quixote", "Miguel de Cervantes", "Real Academia Española", 1605, 3, jhoan));
+    
+        john.adicionaLivro(new Livro("O Hobbit", "J.R.R. Tolkien", "HarperCollins", 1937, 1, john));
+        john.adicionaLivro(new Livro("A Revolução dos Bichos", "George Orwell", "Editora Globo", 1945, 2, john));
+        john.adicionaLivro(new Livro("Cem Anos de Solidão", "Gabriel García Márquez", "Harper & Row", 1967, 3, john));
+    
+        // Adicionando livros à biblioteca geral
+        BibliotecaRepo bibliotecaGeral = BibliotecaRepo.getInstance();
+        for (Usuario usuario : ur.getAllUsuarios()) {
+            for (Livro livro : usuario.getLivros()) {
+                bibliotecaGeral.getBiblioteca().adicionarLivro(livro);
+            }
+        }
+    
+        System.out.println("\nBem-vindo ao BookSwap");
+    
         TelaInicial.telaInicial(scanner);
         scanner.close();
     }
+    
 }
