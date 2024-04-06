@@ -1,10 +1,10 @@
 package controller;
 
 import java.util.Scanner;
-import model.CadastroModel;
 import model.Instituicao;
 import model.InstituicoesRepo;
 import model.Tratativas;
+import model.UsuariosRepo;
 
 public class Cadastro {
 
@@ -27,7 +27,7 @@ public class Cadastro {
 
                 if (instituicao != null) {
                     cadastrado = true;
-                    CadastroModel.cadastraUsuario(nome, login, email, senha, instituicao);
+                    UsuariosRepo.cadastraUsuario(nome, login, email, senha, instituicao);
                     System.out.println("Usuário cadastrado com sucesso!\n");
                     TelaInicial.telaInicial(scanner);
                 } else {

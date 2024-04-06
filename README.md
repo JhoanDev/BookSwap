@@ -10,19 +10,19 @@
       - [Cadastro de Usuário](#cadastro-de-usuário)
       - [Login](#login)
       - [Perfil do Usuário](#perfil-do-usuário-1)
-      - [Edição/Exclusão do Perfil do Usuário](#ediçãoexclusão-do-perfil-do-usuário)
+      - [Edição de dados do Perfil do Usuário](#edição-de-dados-do-perfil-do-usuário)
       - [Listagem de Livros](#listagem-de-livros)
-      - [Busca e Filtros](#busca-e-filtros)
       - [Solicitação de Troca](#solicitação-de-troca)
-      - [Avaliações e Comentários](#avaliações-e-comentários)
-      - [Notificações e Alertas](#notificações-e-alertas)
-      - [Gerenciamento de Biblioteca Pessoal](#gerenciamento-de-biblioteca-pessoal)
+      - [Historico de trocas](#historico-de-trocas)
+      - [Enviar mensagens](#enviar-mensagens)
+      - [Apagar mensagens](#apagar-mensagens)
+      - [Historico de mensagens](#historico-de-mensagens)
+      - [Adicionar livros da biblioteca pessoal](#adicionar-livros-da-biblioteca-pessoal)
+      - [Remover livros da biblioteca pessoal](#remover-livros-da-biblioteca-pessoal)
     - [Requisitos de Qualidade](#requisitos-de-qualidade)
-      - [Usabilidade](#usabilidade)
-      - [Acessibilidade](#acessibilidade)
+      - [Instituições parceiras](#instituições-parceiras)
       - [Comunicabilidade](#comunicabilidade)
       - [Testes e Garantia de Qualidade](#testes-e-garantia-de-qualidade)
-      - [Suporte ao Cliente](#suporte-ao-cliente)
     - [Considerações Finais](#considerações-finais)
   - [Diagrama de classes](#diagrama-de-classes)
   - [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
@@ -50,66 +50,65 @@ O Documento de Requisitos descreve os requisitos funcionais e de qualidade para 
 
 #### Cadastro de Usuário
 
-- Os usuários devem poder se cadastrar na plataforma fornecendo informações básicas como nome, e-mail, instituição de ensino, localização, senha.
-  
+- Os usuários devem poder se cadastrar na plataforma fornecendo informações básicas como nome, e-mail, login, instituição de ensino, senha.
+
 #### Login
 
-- Os usuários devem poder fazer login na plataforma fornecendo seu e-mail e senha previamente cadastrados para acessar suas contas e funcionalidades personalizadas.
+- Os usuários devem poder fazer login na plataforma fornecendo seu login e senha previamente cadastrados para acessar suas contas e funcionalidades personalizadas.
 
 #### Perfil do Usuário
 
-- Cada usuário terá um perfil pessoal onde poderá listar os livros disponíveis para troca, acompanhar suas transações passadas e receber feedback.
+- Cada usuário terá um perfil pessoal onde poderá visualizar seus dados pessoais.
 
-#### Edição/Exclusão do Perfil do Usuário
+#### Edição de dados do Perfil do Usuário
 
-- Os usuários devem poder editar ou excluir suas informações de perfil, garantindo controle sobre suas informações pessoais na plataforma.
+- Os usuários devem poder editar informações de perfil, garantindo controle sobre suas informações pessoais na plataforma.
 
 #### Listagem de Livros
 
-- Os usuários devem poder adicionar livros à sua lista de troca, incluindo detalhes como título, autor, edição e estado de conservação.
-
-#### Busca e Filtros
-
-- Os usuários devem poder buscar livros específicos por título, autor ou área de estudo, além de utilizar filtros para refinar os resultados.
+- Os usuários devem poder ver os livros da sua lista de troca, incluindo detalhes como título, autor, etc.
 
 #### Solicitação de Troca
 
-- Deve existir um mecanismo que permita aos usuários solicitar a troca de livros com outros usuários, incluindo um sistema de notificações para informar sobre novas solicitações.
+- Deve existir um mecanismo que permita aos usuários solicitar a troca de livros com outros usuários.
 
-#### Avaliações e Comentários
+#### Historico de trocas
 
-- Os usuários podem avaliar e deixar comentários sobre os livros trocados, proporcionando feedback útil para outros membros da comunidade.
+- Os usuários devem poder acessar um histórico de todas as trocas realizadas por ele na plataforma.
 
-#### Notificações e Alertas
+#### Enviar mensagens
 
-- A plataforma deve enviar notificações para informar sobre novas mensagens, solicitações de troca, feedback recebido e eventos importantes na plataforma.
+- Os usuários devem poder enviar mensagens uns aos outros para discutir detalhes de trocas.
 
-#### Gerenciamento de Biblioteca Pessoal
+#### Apagar mensagens
 
-- Funcionalidade que permite aos usuários organizar e manter registros de sua biblioteca pessoal, incluindo livros emprestados e trocados.
+- Os usuários devem ter a capacidade de apagar as mensagens que enviaram apenas para si mesmo.
+
+#### Historico de mensagens
+
+- Deve existir um histórico de todas as mensagens enviadas entre usuários.
+
+#### Adicionar livros da biblioteca pessoal
+
+- Os usuários devem poder adicionar livros de sua biblioteca pessoal na plataforma.
+
+#### Remover livros da biblioteca pessoal
+
+- Os usuários devem poder remover livros de sua biblioteca pessoal na plataforma.
 
 ### Requisitos de Qualidade
 
-#### Usabilidade
+#### Instituições parceiras
 
-- Interface para todos os usuários.
-
-#### Acessibilidade
-
-- Plataforma adequada para usuários com diferentes necessidades.
+- Só é possível se cadastrar se você for de uma instituição parceira do app.
 
 #### Comunicabilidade
 
-- Sistema de comunicação entre usuários, incluindo mensagens diretas e notificações.
+- Sistema de comunicação entre usuários que estão fazendo uma troca, incluindo mensagens diretas.
 
 #### Testes e Garantia de Qualidade
 
 - Realização de testes para identificar e corrigir bugs, garantindo estabilidade e confiabilidade.
-
-#### Suporte ao Cliente
-
-- Oferecimento de suporte ao cliente, incluindo recursos de ajuda online e resposta rápida a consultas.
-
 
 ### Considerações Finais
 
@@ -131,17 +130,12 @@ Este Documento de Requisitos delineia os requisitos funcionais e de qualidade pa
 **Teste de Integração:**
 - Testar a integração entre os diferentes módulos do sistema para garantir que funcionem harmoniosamente junto.
 
-**Teste de Aceitação:**
-- Iremos usar o sistema como usuários reais para testar o sistema e fornecer feedback sobre a usabilidade, a fim de garantir que atenda às suas necessidades e expectativa.
 
 **Teste de Sistema:**
 - Testar o sistema como um todo para verificar se todas as partes integradas funcionam corretamente e atendem aos requisitos do sistema.
 
 **Análise do Valor Limite:**
 - Identificar e testar os valores limites dentro das faixas permitidas para entrada de dados, a fim de verificar se o sistema se comporta corretamente próximo aos limites de suas especificações.
-
-**Tabela de Decisão:**
-- Desenvolver uma tabela de decisão que identifique todas as possíveis combinações de condições de entrada e seus resultados esperados, a fim de garantir que todas as condições sejam testadas adequadamente.
 
 **Error Guessing:**
 - Utilizar experiência, intuição e conhecimento geral para antecipar e testar cenários de erro que podem ocorrer durante a execução do sistema.

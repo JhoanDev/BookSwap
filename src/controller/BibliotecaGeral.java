@@ -83,7 +83,6 @@ public class BibliotecaGeral {
         Troca troca = new Troca(livroEscolhidoP, livro);
         eu.addTrocaEmAndamento(troca);
         outro.addTrocaEmAndamento(troca);
-        troca.aprovar();
         Menu.menu(scanner, user);
     }
 }
