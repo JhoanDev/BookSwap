@@ -62,4 +62,10 @@ public class InstituicoesRepo {
     public int getQntInstituicoes() {
         return quantidadeInstituicoes;
     }
+
+    public static void cadastraInstituicao(String nome, String cidade, String estado) {
+        InstituicoesRepo listInst = InstituicoesRepo.getInstance();
+        int id = listInst.getQntInstituicoes() + 1000;
+        listInst.addInstituicao(new Instituicao(id, nome, cidade, estado));
+    }
 }

@@ -62,4 +62,10 @@ public class UsuariosRepo {
     public int getQntUsuarios() {
         return quantidadeUsuarios;
     }
+
+    public static void cadastraUsuario(String nome, String login, String email, String senha, Instituicao universidade) {
+        UsuariosRepo listUsers = UsuariosRepo.getInstance();
+        int id = listUsers.getQntUsuarios() + 10000;
+        listUsers.addUsuario(new Usuario(nome, login, email, senha, universidade, id));  
+    }
 }
