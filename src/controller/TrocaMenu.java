@@ -94,12 +94,12 @@ public class TrocaMenu {
                 switch (opcao2) {
                     case 1:
                         trocaEscolhida.aprovar();
-                        trocaEscolhida.finalizar();
+                        trocaEscolhida.finalizarTroca();
                         System.out.println("Troca finalizada com sucesso.");
                         return;
                     case 2:
                         trocaEscolhida.rejeitar();
-                        trocaEscolhida.finalizar();
+                        trocaEscolhida.finalizarTroca();
                         System.out.println("Troca rejeitada.");
                         return;
                     case 3:

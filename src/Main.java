@@ -41,7 +41,7 @@ public class Main {
         jhoan.adicionaLivro(new Livro("O Senhor dos Anéis", "J.R.R. Tolkien", "HarperCollins", 1954, 1, jhoan));
         jhoan.adicionaLivro(new Livro("1984", "George Orwell", "Editora Globo", 1949, 2, jhoan));
         jhoan.adicionaLivro(new Livro("Dom Quixote", "Miguel de Cervantes", "Real Academia Española", 1605, 3, jhoan));
-    
+
         john.adicionaLivro(new Livro("O Hobbit", "J.R.R. Tolkien", "HarperCollins", 1937, 1, john));
         john.adicionaLivro(new Livro("A Revolução dos Bichos", "George Orwell", "Editora Globo", 1945, 2, john));
         john.adicionaLivro(new Livro("Cem Anos de Solidão", "Gabriel García Márquez", "Harper & Row", 1967, 3, john));

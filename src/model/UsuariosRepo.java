@@ -7,7 +7,7 @@ import java.util.List;
 //para acessar é so criar uma instancia onde precisar e chamar os metodos.
 public class UsuariosRepo {
     private static UsuariosRepo instance;
-    private List<Usuario> UsuarioList = new ArrayList<>();
+    private List<Usuario> usuarioList = new ArrayList<>();
     private static int quantidadeUsuarios = 0;
 
     // Cria instancia de UsuariosRepo
@@ -21,17 +21,17 @@ public class UsuariosRepo {
     // Adiciona usuario a lista
     public void addUsuario(Usuario Usuario) {
         quantidadeUsuarios++;
-        UsuarioList.add(Usuario);
+        usuarioList.add(Usuario);
     }
 
     // Retorna lista de usuarios
     public List<Usuario> getAllUsuarios() {
-        return UsuarioList;
+        return usuarioList;
     }
 
     // Retorna usuario pelo nome
     public Usuario getUsuario(String nome) {
-        for (Usuario Usuario : UsuarioList) {
+        for (Usuario Usuario : usuarioList) {
             if (Usuario.getNome() == nome) {
                 return Usuario;
             }
@@ -41,7 +41,7 @@ public class UsuariosRepo {
 
     // Retorna usuario pelo nome e senha
     public Usuario getUsuario(String login, String senha) {
-        for (Usuario Usuario : UsuarioList) {
+        for (Usuario Usuario : usuarioList) {
             if (Usuario.getLogin().equals(login) && Usuario.getSenha().equals(senha)) {
                 return Usuario;
             }
@@ -50,7 +50,7 @@ public class UsuariosRepo {
     }
 
     public boolean existeEsseLogin(String login) {
-        for (Usuario Usuario : UsuarioList) {
+        for (Usuario Usuario : usuarioList) {
             if (Usuario.getLogin().equals(login)) {
                 return true;
             }
@@ -67,5 +67,15 @@ public class UsuariosRepo {
         UsuariosRepo listUsers = UsuariosRepo.getInstance();
         int id = listUsers.getQntUsuarios() + 10000;
         listUsers.addUsuario(new Usuario(nome, login, email, senha, universidade, id));  
+    }
+
+    public static boolean verificaLogin(String login, String senha) {
+        UsuariosRepo listusers = UsuariosRepo.getInstance();
+        for (Usuario usuario : listusers.getAllUsuarios()) {
+            if (usuario.getLogin().equals(login) && usuario.getSenha().equals(senha)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
