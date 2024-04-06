@@ -99,10 +99,6 @@ public class Usuario {
     public void removeLivro(String nome ) {
         this.bibliotecaPessoal.removerLivro(nome);
     }
-
-    public ArrayList<Livro> getLivros() {
-        return this.bibliotecaPessoal.getLivros();
-    }
     
     public ArrayList<Mensagem> getMensagens() {
         return mensagens;

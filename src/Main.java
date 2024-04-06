@@ -50,7 +50,7 @@ public class Main {
         // Adicionando livros à biblioteca geral
         BibliotecaRepo bibliotecaGeral = BibliotecaRepo.getInstance();
         for (Usuario usuario : ur.getAllUsuarios()) {
-            for (Livro livro : usuario.getLivros()) {
+            for (Livro livro : usuario.getBibliotecaPessoal().getLivros()) {
                 bibliotecaGeral.getBiblioteca().adicionarLivro(livro);
             }
         }

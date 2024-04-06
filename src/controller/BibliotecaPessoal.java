@@ -40,12 +40,12 @@ public class BibliotecaPessoal {
                     livroMenu(scanner, user);
                     break;
                 case 3:
-                    if (user.getLivros().isEmpty()) {
+                    if (user.getBibliotecaPessoal().getLivros().isEmpty()) {
                         System.out.println("\nNenhum livro cadastrado.");
                         livroMenu(scanner, user);
                     }
                     System.out.println("\nLivros do usuario:\n");
-                    for (Livro livro : user.getLivros()) {
+                    for (Livro livro : user.getBibliotecaPessoal().getLivros()) {
                         System.out.println(livro);
                     }
                     livroMenu(scanner, user);
