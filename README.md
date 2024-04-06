@@ -10,13 +10,15 @@
       - [Cadastro de Usuário](#cadastro-de-usuário)
       - [Login](#login)
       - [Perfil do Usuário](#perfil-do-usuário-1)
-      - [Edição/Exclusão de dados do Perfil do Usuário](#ediçãoexclusão-de-dados-do-perfil-do-usuário)
+      - [Edição de dados do Perfil do Usuário](#edição-de-dados-do-perfil-do-usuário)
       - [Listagem de Livros](#listagem-de-livros)
       - [Solicitação de Troca](#solicitação-de-troca)
       - [Historico de trocas](#historico-de-trocas)
       - [Enviar mensagens](#enviar-mensagens)
+      - [Apagar mensagens](#apagar-mensagens)
       - [Historico de mensagens](#historico-de-mensagens)
-      - [Adicionar e remover livros da biblioteca pessoal](#adicionar-e-remover-livros-da-biblioteca-pessoal)
+      - [Adicionar livros da biblioteca pessoal](#adicionar-livros-da-biblioteca-pessoal)
+      - [Remover livros da biblioteca pessoal](#remover-livros-da-biblioteca-pessoal)
     - [Requisitos de Qualidade](#requisitos-de-qualidade)
       - [Instituições parceiras](#instituições-parceiras)
       - [Comunicabilidade](#comunicabilidade)
@@ -48,23 +50,23 @@ O Documento de Requisitos descreve os requisitos funcionais e de qualidade para 
 
 #### Cadastro de Usuário
 
-- Os usuários devem poder se cadastrar na plataforma fornecendo informações básicas como nome, e-mail, instituição de ensino, localização, senha.
+- Os usuários devem poder se cadastrar na plataforma fornecendo informações básicas como nome, e-mail, login, instituição de ensino, senha.
 
 #### Login
 
-- Os usuários devem poder fazer login na plataforma fornecendo seu e-mail e senha previamente cadastrados para acessar suas contas e funcionalidades personalizadas.
+- Os usuários devem poder fazer login na plataforma fornecendo seu login e senha previamente cadastrados para acessar suas contas e funcionalidades personalizadas.
 
 #### Perfil do Usuário
 
-- Cada usuário terá um perfil pessoal onde poderá listar os livros disponíveis para troca, acompanhar suas transações passadas e receber feedback.
+- Cada usuário terá um perfil pessoal onde poderá visualizar seus dados pessoais.
 
-#### Edição/Exclusão de dados do Perfil do Usuário
+#### Edição de dados do Perfil do Usuário
 
-- Os usuários devem poder editar ou excluir suas informações de perfil, garantindo controle sobre suas informações pessoais na plataforma.
+- Os usuários devem poder editar informações de perfil, garantindo controle sobre suas informações pessoais na plataforma.
 
 #### Listagem de Livros
 
-- Os usuários devem poder adicionar livros à sua lista de troca, incluindo detalhes como título, autor, edição e estado de conservação.
+- Os usuários devem poder ver os livros da sua lista de troca, incluindo detalhes como título, autor, etc.
 
 #### Solicitação de Troca
 
@@ -72,19 +74,27 @@ O Documento de Requisitos descreve os requisitos funcionais e de qualidade para 
 
 #### Historico de trocas
 
-- Os usuários devem poder acessar um histórico de todas as trocas realizadas na plataforma.
+- Os usuários devem poder acessar um histórico de todas as trocas realizadas por ele na plataforma.
 
 #### Enviar mensagens
 
 - Os usuários devem poder enviar mensagens uns aos outros para discutir detalhes de trocas.
 
+#### Apagar mensagens
+
+- Os usuários devem ter a capacidade de apagar as mensagens que enviaram apenas para si mesmo.
+
 #### Historico de mensagens
 
 - Deve existir um histórico de todas as mensagens enviadas entre usuários.
 
-#### Adicionar e remover livros da biblioteca pessoal
+#### Adicionar livros da biblioteca pessoal
 
-- Os usuários devem poder adicionar e remover livros de sua biblioteca pessoal na plataforma.
+- Os usuários devem poder adicionar livros de sua biblioteca pessoal na plataforma.
+
+#### Remover livros da biblioteca pessoal
+
+- Os usuários devem poder remover livros de sua biblioteca pessoal na plataforma.
 
 ### Requisitos de Qualidade
 
@@ -99,7 +109,6 @@ O Documento de Requisitos descreve os requisitos funcionais e de qualidade para 
 #### Testes e Garantia de Qualidade
 
 - Realização de testes para identificar e corrigir bugs, garantindo estabilidade e confiabilidade.
-
 
 ### Considerações Finais
 
