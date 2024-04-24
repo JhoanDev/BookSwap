@@ -23,21 +23,10 @@ public class Tratativas {
         return nome;
     }
 
-
-    public static String leEVerificaLogin(Scanner scanner) {
-        String login;
+    // leEVerificaLogin
+    public static boolean leEVerificaLogin(String login) {
         UsuariosRepo usuarioRepo = UsuariosRepo.getInstance();
-        do {
-            System.out.print("Digite o login: ");
-            login = scanner.nextLine();
-            if (!isValidoLogin(login)) {
-                System.out.println("Login inválido. O login deve conter apenas letras, números, pontos e underscores, e ter no mínimo 3 caracteres.");
-            }
-            if (usuarioRepo.existeEsseLogin(login)){
-                System.out.println("Login já cadastrado. Por favor, insira outro");
-            }
-        } while (!isValidoLogin(login) || usuarioRepo.existeEsseLogin(login));
-        return login;
+        return isValidoLogin(login) && !usuarioRepo.existeEsseLogin(login);
     }
     
     public static String leEVerificaSenha(Scanner scanner) {
