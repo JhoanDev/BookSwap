@@ -36,12 +36,16 @@ public class Troca {
     }
 
     public void aprovar() {
-        this.aprovada = true;   
+        if (!this.rejeitada) {
+            this.aprovada = true;
+        }
     }
-
+    
     public void rejeitar() {
-        this.rejeitada = true;
-    }
+        if (!this.aprovada) {
+            this.rejeitada = true;
+        }
+    }    
 
     @Override
     public String toString() {
