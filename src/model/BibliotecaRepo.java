@@ -16,8 +16,11 @@ public class BibliotecaRepo {
 
     // Retorna a biblioteca
     public Biblioteca getBiblioteca() {
-        return biblioteca;
-    }
+        if (this.biblioteca == null) {
+            this.biblioteca = new Biblioteca();
+        }
+        return this.biblioteca;
+    }    
 
     // Remove a biblioteca
     public void removerBiblioteca() {
