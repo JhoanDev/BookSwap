@@ -51,4 +51,48 @@ public class TratativasTest {
         assertEquals("PAU DOS FERROS", cidade);
     }
     */
+
+    // novos testes
+    @Test
+    public void testIsValidLogin() {
+        // Teste com login válido
+        assertTrue(Tratativas.isValidoLogin("valid_login"));
+        assertTrue(Tratativas.isValidoLogin("abc123"));
+        assertTrue(Tratativas.isValidoLogin("a.b_c"));
+    
+        // Teste com login inválido
+        assertFalse(Tratativas.isValidoLogin("ab"));  // Menos de 3 caracteres
+        assertFalse(Tratativas.isValidoLogin("invalid login"));  // Contém espaço
+        assertFalse(Tratativas.isValidoLogin("invalid@login"));  // Contém caractere especial
+        assertFalse(Tratativas.isValidoLogin(""));  // Vazio
+        assertFalse(Tratativas.isValidoLogin(null));  // Nulo
+    }
+    
+    @Test
+    public void testLeEVerificaEmail() {
+        String input = "teste@teste.com\n";
+        Scanner scanner = new Scanner(input);
+        String email = Tratativas.leEVerificaEmail(scanner);
+        assertEquals("teste@teste.com", email);
+        scanner.close();
+    }
+
+    @Test
+    public void testIsValidoEmail() {
+        assertTrue(Tratativas.isValidoEmail("teste@teste.com"));
+        assertFalse(Tratativas.isValidoEmail("teste@"));
+        assertFalse(Tratativas.isValidoEmail("teste teste.com"));
+    }
+
+    @Test
+    public void testContemDigitos() {
+        assertTrue(Tratativas.contemDigitos("teste1"));
+        assertFalse(Tratativas.contemDigitos("teste"));
+    }
+
+    @Test
+    public void testContemDoisEspacosSeguidos() {
+        assertTrue(Tratativas.contemDoisEspacosSeguidos("teste  teste"));
+        assertFalse(Tratativas.contemDoisEspacosSeguidos("teste teste"));
+    }
 }

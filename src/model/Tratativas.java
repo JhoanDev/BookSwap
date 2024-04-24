@@ -76,6 +76,9 @@ public class Tratativas {
     }
 
     public static boolean isValidoLogin(String login) {
+        if (login == null) {
+            return false;
+        }
         return login.matches("^[a-zA-Z0-9_.]{3,}$");
     }
     
