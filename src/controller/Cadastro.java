@@ -15,23 +15,29 @@ public class Cadastro {
         while (!cadastrado && tentativas < 3) {
             try {
                 System.out.println("\nCadastro de Usuário:\n");
-                
+    
                 String nome = Tratativas.leEVerificaNome(scanner);
                 String email = Tratativas.leEVerificaEmail(scanner);
-                String login = Tratativas.leEVerificaLogin(scanner);
+                System.out.print("Digite o login: ");
+                String login = scanner.nextLine();
+                if (!Tratativas.leEVerificaLogin(login)) {
+                    System.out.println("Login inválido ou já cadastrado. Retornando à tela inicial.");
+                    TelaInicial.telaInicial(scanner);
+                    return;
+                }
                 String senha = Tratativas.leEVerificaSenha(scanner);
                 String nomeInstituicao = Tratativas.leEVerificaNomeInstituicao(scanner);
                 String cidade = Tratativas.leEVerificaCidadeInstituicao(scanner);
-        
+            
                 Instituicao instituicao = InstituicoesRepo.getInstance().getInstituicao(nomeInstituicao, cidade);
-
+            
                 if (instituicao != null) {
                     cadastrado = true;
                     UsuariosRepo.cadastraUsuario(nome, login, email, senha, instituicao);
                     System.out.println("Usuário cadastrado com sucesso!\n");
                     TelaInicial.telaInicial(scanner);
                 } else {
-                    System.out.println("Instituição inválida. Por favor, insira um nome de instituição válido.\n");
+                    System.out.println("Instituição inválida. Retornando à tela inicial.");
                     tentativas++;
                 }
             } catch (Exception e) {
@@ -44,5 +50,5 @@ public class Cadastro {
             System.out.println("Limite de tentativas excedido. Cadastro cancelado.\n");
             return;
         }
-    }
+    }  
 }

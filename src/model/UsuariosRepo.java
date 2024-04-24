@@ -50,8 +50,8 @@ public class UsuariosRepo {
     }
 
     public boolean existeEsseLogin(String login) {
-        for (Usuario Usuario : usuarioList) {
-            if (Usuario.getLogin().equals(login)) {
+        for (Usuario usuario : usuarioList) {
+            if (usuario.getLogin().equals(login)) {
                 return true;
             }
         }

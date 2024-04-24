@@ -14,6 +14,11 @@ public class Instituicao {
         this.estado = estado;
     }
 
+    // Construtor para testes
+    public Instituicao(String nome) {
+        this.nome = nome;
+    }
+
     public int getIdInstituicao() {
         return idInstituicao;
     }

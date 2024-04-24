@@ -65,7 +65,19 @@ public class InstituicoesRepo {
 
     public static void cadastraInstituicao(String nome, String cidade, String estado) {
         InstituicoesRepo listInst = InstituicoesRepo.getInstance();
+        if (nome == null || nome.isEmpty()) {
+            throw new IllegalArgumentException("Nome não pode ser vazio");
+        } else if (cidade == null || cidade.isEmpty()) {
+            throw new IllegalArgumentException("Cidade não pode ser vazia");
+        } else if (listInst.existeEssaInstituicaoN(nome) && listInst.existeEssaInstituicaoC(cidade)) {
+            throw new IllegalArgumentException("Instituição já cadastrada");
+        }
         int id = listInst.getQntInstituicoes() + 1000;
         listInst.addInstituicao(new Instituicao(id, nome, cidade, estado));
     }
+
+    public void limparLista() {
+        instituicaoList.clear();
+        quantidadeInstituicoes = 0;
+    }    
 }
