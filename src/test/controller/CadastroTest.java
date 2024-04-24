@@ -1,9 +1,9 @@
-package test;
+package test.controller;
 
-// import model.Usuario;
-import controller.Login;
-import model.UsuariosRepo;
+import controller.Cadastro;
+import model.Instituicao;
 import model.InstituicoesRepo;
+import model.UsuariosRepo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
@@ -13,33 +13,31 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-
-public class LoginTest {
+public class CadastroTest {
 
     private UsuariosRepo usuariosRepo;
+    private InstituicoesRepo instituicoesRepo;
 
     @BeforeEach
     public void setUp() {
-        UsuariosRepo ur = UsuariosRepo.getInstance();
-        InstituicoesRepo instituicoesRepo = InstituicoesRepo.getInstance();
-    
-        InstituicoesRepo.cadastraInstituicao("UFERSA", "PAU DOS FERROS", "RN");
-        UsuariosRepo.cadastraUsuario("JHOAN", "jhoan.log", "jhoan@gmail.com", "13062004",
-                instituicoesRepo.getInstituicao("UFERSA", "PAU DOS FERROS"));
+        usuariosRepo = UsuariosRepo.getInstance();
+        instituicoesRepo = InstituicoesRepo.getInstance();
+        // Adicione aqui as instituições de teste
+        instituicoesRepo.cadastraInstituicao("UFERSA", "PAU DOS FERROS", "RN");
     }
 
     @Test
-    public void testLoginSuccess() {
-        String input = "teste\n1234\n";
+    public void testCadastroSuccess() {
+        String input = "JHOAN\njhoan@gmail.com\njhoan.log\n13062004\nUFERSA\nPAU DOS FERROS\n";
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
         Scanner scanner = new Scanner(in);
-        assertDoesNotThrow(() -> Login.login(scanner));
+        assertDoesNotThrow(() -> Cadastro.cadastro(scanner));
     }
 
     @Test
-    public void testLoginFail() {
-        String input = "teste\nerrado\n";
+    public void testCadastroFail() {
+        String input = "JHOAN\njhoan@gmail.com\njhoan.log\n13062004\nUFRN\nNATAL\n";
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
         Scanner scanner = new Scanner(in);
@@ -48,10 +46,10 @@ public class LoginTest {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
     
-        Login.login(scanner);
+        Cadastro.cadastro(scanner);
     
         // Verificar se a mensagem de erro esperada foi impressa
-        assertTrue(outContent.toString().contains("Erro: Login ou senha incorretos."));
+        assertTrue(outContent.toString().contains("Instituição inválida. Por favor, insira um nome de instituição válido."));
     }
     
 }
