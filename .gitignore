@@ -26,3 +26,6 @@ replay_pid*
 .idea
 .idea/*
 BookSwap.iml
+
+# include all lib files
+!lib/*
