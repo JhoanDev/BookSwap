@@ -23,10 +23,12 @@ public class LoginTest {
         UsuariosRepo ur = UsuariosRepo.getInstance();
         InstituicoesRepo instituicoesRepo = InstituicoesRepo.getInstance();
     
-        InstituicoesRepo.cadastraInstituicao("UFERSA", "PAU DOS FERROS", "RN");
-        UsuariosRepo.cadastraUsuario("JHOAN", "jhoan.log", "jhoan@gmail.com", "13062004",
-                instituicoesRepo.getInstituicao("UFERSA", "PAU DOS FERROS"));
-    }
+        if (!instituicoesRepo.existeEssaInstituicaoN("UFERSA") || !instituicoesRepo.existeEssaInstituicaoC("PAU DOS FERROS")) {
+            InstituicoesRepo.cadastraInstituicao("UFERSA", "PAU DOS FERROS", "RN");
+        }
+        UsuariosRepo.cadastraUsuario("DAYVISON", "dayve", "dayvison@gmail.com", "159149139",
+        instituicoesRepo.getInstituicao("UFERSA", "PAU DOS FERROS"));
+    }    
 
     @Test
     public void testLoginSuccess() {
