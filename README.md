@@ -116,11 +116,11 @@ Este Documento de Requisitos delineia os requisitos funcionais e de qualidade pa
 
 ## Diagrama de classes
 
-![DiagramaDeClasses](https://github.com/JhoanDev/BookSwap/blob/main/DiagramaDeClasses.png)
+![DiagramaDeClasses](DiagramaDeClasses.png)
 
 ## Diagrama de casos de uso
 
-![DiagramaDeCasosDeUso](https://github.com/JhoanDev/BookSwap/blob/main/DiagramaDeCasosDeUso.png)
+![DiagramaDeCasosDeUso](DiagramaDeCasosDeUso.png)
 
 ## Atividades de teste a serem empregadas
 
